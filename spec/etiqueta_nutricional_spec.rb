@@ -11,8 +11,12 @@ RSpec.describe EtiquetaNutricional do
     expect(@etiqueta1.obtener_nombre).to eq("nombre")
   end
   
-   it "Debe existir la cantidad de grasas" do
+  it "Debe existir la cantidad de grasas" do
     expect(@etiqueta1.obtener_grasas).to eq(10)
+  end
+  
+  it "Debe existir la cantidad de grasas saturadas" do
+    expect(@etiqueta1.obtener_grasas_saturadas).to eq(10)
   end
 
 end
