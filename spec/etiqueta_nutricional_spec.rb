@@ -3,7 +3,7 @@ RSpec.describe EtiquetaNutricional do
     expect(EtiquetaNutricional::VERSION).not_to be nil
   end
 
-  it "Existe la clase etiqueta nutricional" do
+  before(:each) do 
     @etiqueta1 = Etiqueta.new("nombre", 10, 10, 10, 10, 10, 10, 10)
   end
   
