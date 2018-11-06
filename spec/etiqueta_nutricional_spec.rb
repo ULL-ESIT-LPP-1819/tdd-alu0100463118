@@ -4,6 +4,6 @@ RSpec.describe EtiquetaNutricional do
   end
 
   it "Existe la clase etiqueta nutricional" do
-    @etiqueta1 = Etiqueta.new()
+    @etiqueta1 = Etiqueta.new(10,10,10,10,10,10,10)
   end
 end
