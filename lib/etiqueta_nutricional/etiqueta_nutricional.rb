@@ -21,5 +21,8 @@ class Etiqueta
     @grasas
   end
   
+  def obtener_grasas_saturadas
+    @grasas_saturadas
+  end
   
 end
