@@ -13,8 +13,10 @@ class Etiqueta
     @sal = sal
   end
   
-  def nombre
+  def obtener_nombre
     @nombre
   end
+
+  
   
 end
