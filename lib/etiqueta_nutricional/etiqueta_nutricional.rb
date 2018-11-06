@@ -16,7 +16,10 @@ class Etiqueta
   def obtener_nombre
     @nombre
   end
-
+  
+  def obtener_grasas
+    @grasas
+  end
   
   
 end
