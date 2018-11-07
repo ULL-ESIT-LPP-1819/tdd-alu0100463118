@@ -35,4 +35,9 @@ RSpec.describe EtiquetaNutricional do
     expect(@etiqueta1.obtener_sal).to eq(10)
   end
   
+  it "Se puede introducir cantidad de porciones y el tamaño de cada una" do
+    @etiqueta2 = Etiqueta.new("Etiqueta 2", 10, 10, 10, 10, 10, 10, 10, 4, 2.5)
+    
+  end
+  
 end
