@@ -76,4 +76,8 @@ class Etiqueta
     (@azucares.round(2) /90 * 100).round(2)
   end
 
+  def ir_proteinas
+    (@proteinas.round(2) / 50 * 100).round(2)
+  end
+  
 end
