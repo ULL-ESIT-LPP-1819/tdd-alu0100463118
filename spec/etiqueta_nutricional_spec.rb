@@ -19,4 +19,8 @@ RSpec.describe EtiquetaNutricional do
     expect(@etiqueta1.obtener_grasas_saturadas).to eq(10)
   end
 
+  it "Debe existir la cantidad de hidratos de carbono" do
+    expect(@etiqueta1.obtener_hidratos_carbono).to eq(10)
+  end
+  
 end
