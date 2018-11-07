@@ -76,4 +76,9 @@ RSpec.describe EtiquetaNutricional do
     expect(@etiqueta1.ir_sal).to eq(166.67)
   end
   
+  it "Existe un metodo para mostrar la etiqueta formateada" do
+    expect(@etiqueta1).to respond_to(:to_s)
+  end
+  
+  
 end

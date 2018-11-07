@@ -84,4 +84,7 @@ class Etiqueta
     (@sal.round(2) / 6 * 100).round(2)
   end
   
+  def to_s
+  end
+  
 end
