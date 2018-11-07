@@ -80,4 +80,8 @@ class Etiqueta
     (@proteinas.round(2) / 50 * 100).round(2)
   end
   
+  def ir_sal
+    (@sal.round(2) / 6 * 100).round(2)
+  end
+  
 end
