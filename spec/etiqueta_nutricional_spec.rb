@@ -36,7 +36,7 @@ RSpec.describe EtiquetaNutricional do
   end
   
   it "Se puede introducir cantidad de porciones y el tamaño de cada una" do
-    @etiqueta2 = Etiqueta.new("Etiqueta 2", 10, 10, 10, 10, 10, 10, 10, [4, 2.5])
+    @etiqueta2 = Etiqueta.new("Etiqueta 2", 10, 10, 10, 10, 10, 10, [4, 2.5])
   end
   
   it "Existe un metodo para obtener el numero de porciones" do

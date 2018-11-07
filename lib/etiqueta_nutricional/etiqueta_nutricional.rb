@@ -1,10 +1,11 @@
 class Etiqueta
   
-  attr_reader :nombre, :valor_energetico, :grasas, :grasas_saturadas, :hidratos_de_carbono, :azucares, :proteinas, :sal, :porciones
+  attr_reader :nombre, :grasas, :grasas_saturadas, :hidratos_de_carbono, :azucares, :proteinas, :sal, :porciones
   
-  def initialize(nombre, valor_energetico, grasas, grasas_saturadas, hidratos_de_carbono, azucares, proteinas, sal, porciones)
+  def initialize(nombre, grasas, grasas_saturadas, hidratos_de_carbono, azucares, proteinas, sal, porciones)
     @nombre = nombre
-    @valor_energetico = valor_energetico
+    @valor_energetico_kj = (grasas * 37) + (grasas_saturadas * 37) + (hidratos_de_carbono * 17) + (azucares * 17) + (proteinas * 17) + (sal * 25)
+    @valor_energetico_kcal = (grasas * 9) + (grasas_saturadas * 9) + (hidratos_de_carbono * 4) + (azucares * 4) + (proteinas * 4) + (sal * 6)
     @grasas = grasas
     @grasas_saturadas = grasas_saturadas
     @hidratos_de_carbono = hidratos_de_carbono
@@ -45,6 +46,10 @@ class Etiqueta
   
   def obtener_numero_porciones
     @numero_porciones
+  end
+  
+  def obtener_valor_energetico_kj
+    @valor_energetico_kj
   end
   
 end
