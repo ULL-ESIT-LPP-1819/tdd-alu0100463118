@@ -68,4 +68,8 @@ RSpec.describe EtiquetaNutricional do
     expect(@etiqueta1.ir_azucares).to eq(11.11)
   end
   
+  it "Se calcula el IR de las proteinas" do
+    expect(@etiqueta1.ir_proteinas).to eq(20)
+  end
+  
 end
