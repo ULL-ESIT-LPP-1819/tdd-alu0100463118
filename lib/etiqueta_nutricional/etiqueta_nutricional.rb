@@ -29,4 +29,8 @@ class Etiqueta
     @hidratos_de_carbono
   end
   
+  def obtener_azucar
+    @azucares
+  end
+  
 end

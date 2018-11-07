@@ -27,4 +27,6 @@ RSpec.describe EtiquetaNutricional do
     expect(@etiqueta1.obtener_azucar).to eq(10)
   end
   
+
+  
 end
