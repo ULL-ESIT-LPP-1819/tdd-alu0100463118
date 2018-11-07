@@ -71,5 +71,9 @@ class Etiqueta
   def ir_hidratos_carbono
     (@hidratos_de_carbono.round(2) /260 * 100).round(2)
   end
+  
+  def ir_azucares
+    (@azucares.round(2) /90 * 100).round(2)
+  end
 
 end
