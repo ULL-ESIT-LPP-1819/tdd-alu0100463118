@@ -47,4 +47,8 @@ RSpec.describe EtiquetaNutricional do
     expect(@etiqueta1.obtener_valor_energetico_kj).to eq(1500)
   end
   
+  it "Existe un metodo para obtener el valor energetico en Kilocalorias" do
+    expect(@etiqueta1.obtener_valor_energetico_kcal).to eq(360)
+  end
+  
 end
