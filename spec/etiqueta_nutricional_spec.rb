@@ -4,7 +4,7 @@ RSpec.describe EtiquetaNutricional do
   end
 
   before(:each) do 
-    @etiqueta1 = Etiqueta.new("nombre", 10, 10, 10, 10, 10, 10, 10, [4,40])
+    @etiqueta1 = Etiqueta.new("nombre", 10, 10, 10, 10, 10, 10, [4,40])
   end
   
   it "Debe existir un nombre para la etiqueta" do
@@ -41,6 +41,10 @@ RSpec.describe EtiquetaNutricional do
   
   it "Existe un metodo para obtener el numero de porciones" do
     expect(@etiqueta1.obtener_numero_porciones).to eq(4)
+  end
+  
+  it "Existe un metodo para obtener el valor energetico en Kilojulios" do
+    expect(@etiqueta1.obtener_valor_energetico_kj).to eq(1500)
   end
   
 end

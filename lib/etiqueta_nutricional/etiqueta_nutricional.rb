@@ -43,4 +43,8 @@ class Etiqueta
     @sal
   end
   
+  def obtener_numero_porciones
+    @numero_porciones
+  end
+  
 end
