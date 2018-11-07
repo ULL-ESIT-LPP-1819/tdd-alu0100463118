@@ -85,6 +85,15 @@ class Etiqueta
   end
   
   def to_s
+    puts "Nombre: #{@nombre}"
+    puts "Valor energetico kj: #{@valor_energetico_kj}"
+    puts "Valor energetico kcal: #{@valor_energetico_kcal}"
+    puts "Grasas: #{@grasas}"
+    puts "Grasas saturadas: #{@grasas_saturadas}"
+    puts "Hidratos de carbono: #{@hidratos_de_carbono}"
+    puts "Proteinas: #{@proteinas}"
+    puts "Azucares: #{@azucares}"
+    puts "Sal: #{@sal}"
   end
   
 end
