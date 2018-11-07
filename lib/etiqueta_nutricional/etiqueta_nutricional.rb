@@ -56,4 +56,11 @@ class Etiqueta
     @valor_energetico_kcal
   end
   
+  def ir_valor_energetico_kj
+    (@valor_energetico_kj.round(2) / 8400 * 100).round(2)
+  end
+  
+  def ir_valor_energetico_kcal
+    (@valor_energetico_kcal.round(2) / 2000 * 100).round(2)
+  end
 end

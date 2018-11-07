@@ -52,8 +52,12 @@ RSpec.describe EtiquetaNutricional do
   end
   
   it "Se calcula el IR del valor energetico" do
-    expect(@etiqueta1.ir_valor_energetico_kj).to eq(17,85)
+    expect(@etiqueta1.ir_valor_energetico_kj).to eq(17.86)
     expect(@etiqueta1.ir_valor_energetico_kcal).to eq(18)
+  end
+  
+  it "Se calcula el IR de la grasa total" do
+    expect(@etiqueta1.ir_grasa_total).to eq(28.57)
   end
   
 end
