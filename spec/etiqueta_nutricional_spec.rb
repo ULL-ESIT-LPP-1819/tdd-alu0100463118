@@ -60,4 +60,8 @@ RSpec.describe EtiquetaNutricional do
     expect(@etiqueta1.ir_grasa_total).to eq(28.57)
   end
   
+  it "Se calcula el IR de los hidratos de carbono" do
+    expect(@etiqueta1.ir_hidratos_carbono).to eq(3.85)
+  end
+  
 end
