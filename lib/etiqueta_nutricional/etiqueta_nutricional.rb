@@ -37,4 +37,8 @@ class Etiqueta
     @proteinas
   end
   
+  def obtener_sal
+    @sal
+  end
+  
 end
