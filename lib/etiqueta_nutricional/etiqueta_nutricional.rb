@@ -63,4 +63,9 @@ class Etiqueta
   def ir_valor_energetico_kcal
     (@valor_energetico_kcal.round(2) / 2000 * 100).round(2)
   end
+  
+  def ir_grasa_total
+    ((@grasas.round(2) + @grasas_saturadas.round(2)) / 70 * 100).round(2)
+  end
+
 end
