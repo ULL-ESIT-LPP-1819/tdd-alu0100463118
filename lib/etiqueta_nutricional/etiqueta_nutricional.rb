@@ -25,4 +25,8 @@ class Etiqueta
     @grasas_saturadas
   end
   
+  def obtener_hidratos_carbono
+    @hidratos_de_carbono
+  end
+  
 end
