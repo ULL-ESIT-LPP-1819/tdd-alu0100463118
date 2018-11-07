@@ -52,4 +52,8 @@ class Etiqueta
     @valor_energetico_kj
   end
   
+  def obtener_valor_energetico_kcal
+    @valor_energetico_kcal
+  end
+  
 end
