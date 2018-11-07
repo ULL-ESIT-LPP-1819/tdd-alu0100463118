@@ -51,4 +51,9 @@ RSpec.describe EtiquetaNutricional do
     expect(@etiqueta1.obtener_valor_energetico_kcal).to eq(360)
   end
   
+  it "Se calcula el IR del valor energetico" do
+    expect(@etiqueta1.ir_valor_energetico_kj).to eq(17,85)
+    expect(@etiqueta1.ir_valor_energetico_kcal).to eq(18)
+  end
+  
 end
