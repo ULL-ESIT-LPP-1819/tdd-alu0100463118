@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    etiqueta_nutricional (0.6.0)
+    etiqueta_nutricional (0.7.0)
 
 GEM
   remote: https://rubygems.org/

@@ -33,4 +33,8 @@ class Etiqueta
     @azucares
   end
   
+  def obtener_proteinas
+    @proteinas
+  end
+  
 end
