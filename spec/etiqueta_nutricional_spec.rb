@@ -27,6 +27,8 @@ RSpec.describe EtiquetaNutricional do
     expect(@etiqueta1.obtener_azucar).to eq(10)
   end
   
-
+  it "Debe existir la cantidad de proteinas" do
+    expect(@etiqueta1.obtener_proteinas).to eq(10)
+  end
   
 end
