@@ -31,4 +31,8 @@ RSpec.describe EtiquetaNutricional do
     expect(@etiqueta1.obtener_proteinas).to eq(10)
   end
   
+  it "Debe existir la cantidad de sal" do
+    expect(@etiqueta1.obtener_sal).to eq(10)
+  end
+  
 end
