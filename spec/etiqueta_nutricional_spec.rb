@@ -23,4 +23,8 @@ RSpec.describe EtiquetaNutricional do
     expect(@etiqueta1.obtener_hidratos_carbono).to eq(10)
   end
   
+  it "Debe existir la cantidad de azucares" do
+    expect(@etiqueta1.obtener_azucar).to eq(10)
+  end
+  
 end
