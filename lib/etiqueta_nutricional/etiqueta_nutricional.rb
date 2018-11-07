@@ -67,5 +67,9 @@ class Etiqueta
   def ir_grasa_total
     ((@grasas.round(2) + @grasas_saturadas.round(2)) / 70 * 100).round(2)
   end
+  
+  def ir_hidratos_carbono
+    (@hidratos_de_carbono.round(2) /260 * 100).round(2)
+  end
 
 end
