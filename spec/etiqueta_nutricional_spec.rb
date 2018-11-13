@@ -154,4 +154,15 @@ RSpec.describe EtiquetaNutricional do
     @lista6.popF
     expect(@lista6.fin).to eq(@etiqueta2)
   end
+  
+  it "Se pueden sumar los gramos de sal" do
+    @lista6 = ListaEtiquetas.new()
+    @lista6.pushF(@etiqueta1)
+    @lista6.pushF(@etiqueta2)
+    @lista6.pushF(@etiqueta3)
+    @lista6.pushF(@etiqueta4)
+    @lista6.pushF(@etiqueta5)
+    @lista6.pushF(@etiqueta6)
+    expect(@lista6.sal).to eq(36)
+  end
 end
