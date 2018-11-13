@@ -85,15 +85,16 @@ class Etiqueta
   end
   
   def to_s
-    puts "Nombre: #{@nombre}"
-    puts "Valor energetico kj: #{@valor_energetico_kj}"
-    puts "Valor energetico kcal: #{@valor_energetico_kcal}"
-    puts "Grasas: #{@grasas}"
-    puts "Grasas saturadas: #{@grasas_saturadas}"
-    puts "Hidratos de carbono: #{@hidratos_de_carbono}"
-    puts "Proteinas: #{@proteinas}"
-    puts "Azucares: #{@azucares}"
-    puts "Sal: #{@sal}"
+    s1 = "Nombre: #{@nombre}\n"
+    s2 = "Valor energetico kj: #{@valor_energetico_kj}kj\n"
+    s3 = "Valor energetico kcal: #{@valor_energetico_kcal}kcal\n"
+    s4 = "Grasas: #{@grasas}g\n"
+    s5 = "Grasas saturadas: #{@grasas_saturadas}g\n"
+    s6 = "Hidratos de carbono: #{@hidratos_de_carbono}g\n"
+    s7 = "Proteinas: #{@proteinas}g\n"
+    s8 = "Azucares: #{@azucares}g\n"
+    s9 = "Sal: #{@sal}g\n"
+    cadena = s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + s9
   end
   
 end

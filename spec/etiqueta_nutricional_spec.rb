@@ -80,5 +80,21 @@ RSpec.describe EtiquetaNutricional do
     expect(@etiqueta1).to respond_to(:to_s)
   end
   
+  it "La etiqueta se muestra formateada" do
+    s1 = "Nombre: nombre\n"
+    s2 = "Valor energetico kj: 1500kj\n"
+    s3 = "Valor energetico kcal: 360kcal\n"
+    s4 = "Grasas: 10g\n"
+    s5 = "Grasas saturadas: 10g\n"
+    s6 = "Hidratos de carbono: 10g\n"
+    s7 = "Proteinas: 10g\n"
+    s8 = "Azucares: 10g\n"
+    s9 = "Sal: 10g\n"
+    expect(@etiqueta1.to_s).to eq(s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + s9)
+  end
+  
+  it "Podemos crear nodos con etiquetas" do
+    @nodo1 = Nodo.new(@etiqueta1)
+  end
   
 end
