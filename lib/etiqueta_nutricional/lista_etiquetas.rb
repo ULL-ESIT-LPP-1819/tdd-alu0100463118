@@ -60,7 +60,5 @@ class ListaEtiquetas
     end
     return suma
   end
-  
-
 
 end

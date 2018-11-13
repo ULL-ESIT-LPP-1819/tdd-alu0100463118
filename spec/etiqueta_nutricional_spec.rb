@@ -165,4 +165,14 @@ RSpec.describe EtiquetaNutricional do
     @lista6.pushF(@etiqueta6)
     expect(@lista6.sal).to eq(36)
   end
+  
+  it "Clasificacion segun los gramos de sal" do
+    @lista7 = ListaEtiquetas.new()
+    @lista7.pushF(@etiqueta1)
+    @lista7.pushF(@etiqueta2)
+    @lista7.pushF(@etiqueta3)
+    @lista7.pushF(@etiqueta4)
+    @lista7.pushF(@etiqueta5)
+    expect(@lista7.clasificacion_sal).to eq("Alta cantidad de sal")
+  end
 end
