@@ -1,3 +1,5 @@
+Nodo = Struct.new(:value, :next, :prev)
+
 class Etiqueta
   
   include Enumerable

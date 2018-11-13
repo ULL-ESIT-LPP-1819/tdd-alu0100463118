@@ -97,4 +97,8 @@ RSpec.describe EtiquetaNutricional do
     @nodo1 = Nodo.new(@etiqueta1)
   end
   
+  it "Existe la clase ListaEtiquetas" do
+    @lista1 = ListaEtiquetas.new()
+  end
+  
 end
