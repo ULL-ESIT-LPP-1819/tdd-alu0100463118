@@ -11,7 +11,7 @@ class ListaEtiquetas
   
   def pushI(nodo1)
     nodo = Nodo.new(nodo1, nil, nil)
-    if @inicio == nil then
+    if @inicio.value == nil then
       @inicio = nodo
       @fin = nodo
     else
@@ -24,4 +24,7 @@ class ListaEtiquetas
     @inicio.value
   end
   
+  def fin
+    @fin.value
+  end
 end
