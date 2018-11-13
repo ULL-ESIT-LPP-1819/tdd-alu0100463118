@@ -16,6 +16,7 @@ class ListaEtiquetas
       @fin = nodo
     else
       nodo.next = @inicio
+      @inicio.prev = nodo
       @inicio = nodo 
     end
   end
@@ -27,8 +28,13 @@ class ListaEtiquetas
       @fin = nodo
     else
       nodo.prev = @fin
+      @fin.next = nodo
       @fin = nodo
     end
+  end
+  
+  def popI
+    @inicio = @inicio.next
   end
   
   def inicio
@@ -38,4 +44,5 @@ class ListaEtiquetas
   def fin
     @fin.value
   end
+
 end
