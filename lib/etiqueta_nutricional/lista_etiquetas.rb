@@ -20,4 +20,8 @@ class ListaEtiquetas
     end
   end
   
+  def inicio
+    @inicio.value
+  end
+  
 end

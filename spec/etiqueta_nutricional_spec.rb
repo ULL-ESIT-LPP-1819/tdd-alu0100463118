@@ -5,6 +5,11 @@ RSpec.describe EtiquetaNutricional do
 
   before(:each) do 
     @etiqueta1 = Etiqueta.new("nombre", 10, 10, 10, 10, 10, 10, [4,40])
+    @etiqueta2 = Etiqueta.new("nombre2", 20, 20, 20, 20, 20, 2, [2,80])
+    @etiqueta3 = Etiqueta.new("nombre3", 30, 30, 30, 30, 30, 0, [4,100])
+    @etiqueta4 = Etiqueta.new("nombre4", 40, 40, 40, 40, 40, 15, [2,120])
+    @etiqueta5 = Etiqueta.new("nombre5", 50, 50, 50, 50, 50, 4, [4,140])
+    @etiqueta6 = Etiqueta.new("nombre6", 60, 60, 60, 60, 60, 5, [2,160])
   end
   
   it "Debe existir un nombre para la etiqueta" do
@@ -106,6 +111,14 @@ RSpec.describe EtiquetaNutricional do
     @lista2.pushI(@etiqueta1)
     @lista2.pushI(@etiqueta2)
     @lista2.pushI(@etiqueta3)
+  end
+  
+  it "Podemos ver el primer elemento de la lista" do
+    @lista2 = ListaEtiquetas.new()
+    @lista2.pushI(@etiqueta1)
+    @lista2.pushI(@etiqueta2)
+    @lista2.pushI(@etiqueta3)
+    expect(@lista2.inicio).to eq(@etiqueta3)
   end
   
 end
