@@ -121,4 +121,12 @@ RSpec.describe EtiquetaNutricional do
     expect(@lista2.inicio).to eq(@etiqueta3)
   end
   
+  it "Podemos ver el ultimo elemento de la lista" do
+    @lista2 = ListaEtiquetas.new()
+    @lista2.pushI(@etiqueta1)
+    @lista2.pushI(@etiqueta2)
+    @lista2.pushI(@etiqueta3)
+    expect(@lista2.fin).to eq(@etiqueta1)
+  end
+  
 end
