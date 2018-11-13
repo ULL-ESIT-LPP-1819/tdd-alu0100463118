@@ -129,4 +129,11 @@ RSpec.describe EtiquetaNutricional do
     expect(@lista3.fin).to eq(@etiqueta1)
   end
   
+  it "Podemos insertar un elemento de la lista por el final" do
+    @lista4 = ListaEtiquetas.new()
+    @lista4.pushF(@etiqueta1)
+    @lista4.pushF(@etiqueta2)
+    @lista4.pushF(@etiqueta3)
+    expect(@lista4.inicio).to eq(@etiqueta1)
+  end
 end
