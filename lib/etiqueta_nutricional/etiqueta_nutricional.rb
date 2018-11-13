@@ -1,4 +1,8 @@
+Nodo = Struct.new(:value, :next, :prev)
+
 class Etiqueta
+  
+  include Enumerable
   
   attr_reader :nombre, :grasas, :grasas_saturadas, :hidratos_de_carbono, :azucares, :proteinas, :sal, :porciones
   
