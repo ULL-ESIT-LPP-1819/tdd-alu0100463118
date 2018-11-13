@@ -60,5 +60,17 @@ class ListaEtiquetas
     end
     return suma
   end
+  
+  def clasificacion_sal
+    if sal <= 0
+      return "Sin sal"
+    elsif sal < 10
+      return "Baja cantidad de sal"
+    elsif sal < 20 
+      return "Cantidad moderada de sal"
+    else 
+      return "Alta cantidad de sal"
+    end
+  end
 
 end
