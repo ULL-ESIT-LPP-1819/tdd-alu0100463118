@@ -35,6 +35,12 @@ class ListaEtiquetas
   
   def popI
     @inicio = @inicio.next
+    @inicio.prev = nil
+  end
+  
+  def popF
+    @fin = @fin.prev
+    @fin.prev = nil
   end
   
   def inicio

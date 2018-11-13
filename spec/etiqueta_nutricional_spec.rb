@@ -152,6 +152,6 @@ RSpec.describe EtiquetaNutricional do
     @lista6.pushF(@etiqueta2)
     @lista6.pushF(@etiqueta3)
     @lista6.popF
-    expect(@lista6.inicio).to eq(@etiqueta2)
+    expect(@lista6.fin).to eq(@etiqueta2)
   end
 end
