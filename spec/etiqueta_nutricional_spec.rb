@@ -101,4 +101,11 @@ RSpec.describe EtiquetaNutricional do
     @lista1 = ListaEtiquetas.new()
   end
   
+  it "Podemos crear una lista con las etiquetas" do
+    @lista2 = ListaEtiquetas.new()
+    @lista2.pushI(@etiqueta1)
+    @lista2.pushI(@etiqueta2)
+    @lista2.pushI(@etiqueta3)
+  end
+  
 end
