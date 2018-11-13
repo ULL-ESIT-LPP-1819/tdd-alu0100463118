@@ -145,4 +145,13 @@ RSpec.describe EtiquetaNutricional do
     @lista5.popI
     expect(@lista5.inicio).to eq(@etiqueta2)
   end
+  
+    it "Podemos eliminar el ultimo elemento de la lista" do
+    @lista6 = ListaEtiquetas.new()
+    @lista6.pushF(@etiqueta1)
+    @lista6.pushF(@etiqueta2)
+    @lista6.pushF(@etiqueta3)
+    @lista6.popF
+    expect(@lista6.inicio).to eq(@etiqueta2)
+  end
 end
