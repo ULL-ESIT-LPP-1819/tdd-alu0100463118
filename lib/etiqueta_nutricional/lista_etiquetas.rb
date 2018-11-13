@@ -51,4 +51,16 @@ class ListaEtiquetas
     @fin.value
   end
 
+  def sal
+    nodo = @inicio
+    suma = 0
+    while (nodo != nil)
+      suma = suma + nodo.value.obtener_sal
+      nodo = nodo.next
+    end
+    return suma
+  end
+  
+
+
 end
