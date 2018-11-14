@@ -1,4 +1,5 @@
 RSpec.describe EtiquetaNutricional do
+  
   it "has a version number" do
     expect(EtiquetaNutricional::VERSION).not_to be nil
   end
@@ -97,7 +98,7 @@ RSpec.describe EtiquetaNutricional do
     s9 = "Sal: 10g\n"
     expect(@etiqueta1.to_s).to eq(s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + s9)
   end
-  
+
   it "Podemos crear nodos con etiquetas" do
     @nodo1 = Nodo.new(@etiqueta1)
   end
