@@ -257,4 +257,13 @@ RSpec.describe Individuo do
     @lista8.pushF(@paciente2)
     @lista8.pushF(@paciente3)
   end
+  
+  it "Se muestra correctamente los datos de un individuo" do
+    @individuo1 = Individuo.new("Pepe", 25, 0)
+    s1 = "Nombre: Pepe\n"
+    s2 = "Edad: 25\n"
+    s3 = "Sexo: Hombre\n"
+    expect(@individuo1.to_s).to eq(s1 + s2 + s3)
+  end
+  
 end
