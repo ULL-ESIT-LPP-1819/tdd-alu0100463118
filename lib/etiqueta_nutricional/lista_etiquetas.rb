@@ -81,4 +81,11 @@ class ListaEtiquetas
     return cadena
   end
   
+  def posicion(pos)
+    nodo = @inicio
+    pos.times do
+      nodo = nodo.next
+    end
+    return nodo.value
+  end
 end
