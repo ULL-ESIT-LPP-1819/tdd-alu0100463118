@@ -279,11 +279,11 @@ RSpec.describe Individuo do
   end
   
   it "Clasificacion según su indice de masa corporal" do
-    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, 60, 60)
-    @paciente2 = Paciente.new("Pedro", 22, 0, 80, 1.8, 80, 60)
-    @paciente3 = Paciente.new("Juan", 30, 0, 110, 1.95, 70, 60)
-    @paciente4 = Paciente.new("Cristina", 25, 1, 120, 1.55, 55, 50)
-    @paciente5 = Paciente.new("Bea", 18, 1, 90, 1.72, 45, 40)
+    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, [60, 58], [60, 59])
+    @paciente2 = Paciente.new("Pedro", 22, 0, 80, 1.8, [81, 79], [61, 59])
+    @paciente3 = Paciente.new("Juan", 30, 0, 110, 1.95, [71, 69], [60, 58])
+    @paciente4 = Paciente.new("Cristina", 25, 1, 120, 1.55, [55, 56], [50, 50])
+    @paciente5 = Paciente.new("Bea", 18, 1, 90, 1.72, [45, 45.5], [40, 41])
     @lista = ListaEtiquetas.new()
     @lista.pushF(@paciente1)
     @lista.pushF(@paciente2)
@@ -296,4 +296,5 @@ RSpec.describe Individuo do
     expect(@lista.posicion(3).clasificacion_oms).to eq("Obesidad grado 3")
     expect(@lista.posicion(4).clasificacion_oms).to eq("Obesidad grado 1")
   end
+  
 end

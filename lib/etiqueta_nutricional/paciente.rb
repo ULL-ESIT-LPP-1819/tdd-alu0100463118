@@ -26,7 +26,7 @@ class Paciente < Individuo
     end
     
     def rcc
-        (@circunferencia_cintura.round(2) / @circunferencia_cadera.round(2)).round(2)
+        (((@circunferencia_cintura[0].round(2) + @circunferencia_cintura[1].round(2)) / 2) / ((@circunferencia_cadera[0].round(2) + @circunferencia_cadera[1].round(2)) / 2).round(2))
     end
     
     def clasificacion_oms
