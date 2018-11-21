@@ -216,22 +216,34 @@ RSpec.describe Individuo do
   end
   
   it "Existe la clase paciente" do
-    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, 80, 60)
+    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, [60, 58], [60, 59])
   end
   
   it "Paciente es de tipo Paciente" do
-    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, 80, 60)
+    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, [60, 58], [60, 59])
     expect(@paciente1).to be_an_instance_of(Paciente)
   end
   
   it "Individuo es de la clase Individuo" do
     @individuo1 = Individuo.new("Pepe", 25, 0)
     expect(@individuo1.class).to eq(Individuo)
+    
   end
   
   it "Paciente es de la clase Paciente" do
-    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, 80, 60)
+    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, [60, 58], [60, 59])
     expect(@paciente1.class).to eq(Paciente)
+  end
+  
+  
+  it "Paciente es hija de Individuo" do
+    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, [60, 58], [60, 59])
+    expect(Paciente.superclass).to eq(Individuo)
+  end
+  
+  it "Paciente esta en la jerarquia de individuo" do
+    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, [60, 58], [60, 59])
+    expect(@paciente1.is_a?Object).to eq(true)
   end
   
   it "Individuo es de tipo Individuo" do
@@ -240,16 +252,21 @@ RSpec.describe Individuo do
   end
   
   it "Un paciente es un individuo" do
-    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, 80, 60)
+    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, [60, 58], [60, 59])
     expect(@paciente1).to be_a_kind_of(Individuo)
+  end
+  
+   it "Paciente responde a metodos de paciente" do
+    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, [60, 58], [60, 59])
+    expect(@paciente1.respond_to?(:to_s)).to eq(true)
   end
 
   it "Podemos crear una lista de individuos" do
     @individuo1 = Individuo.new("Pepe", 25, 0)
-    @individuo2 = Individuo.new("Pepe", 25, 0)
-    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, 80, 60)
-    @paciente2 = Paciente.new("Ana", 20, 1, 75, 1.6, 80, 60)
-    @paciente3 = Paciente.new("Ana", 20, 1, 75, 1.6, 80, 60)
+    @individuo2 = Individuo.new("Andres", 25, 0)
+    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, [60, 58], [60, 59])
+    @paciente2 = Paciente.new("Bea", 20, 1, 75, 1.6, [60, 58], [60, 59])
+    @paciente3 = Paciente.new("Sara", 20, 1, 75, 1.6, [60, 58], [60, 59])
     @lista8 = ListaEtiquetas.new()
     @lista8.pushF(@individuo1)
     @lista8.pushF(@individuo2)
@@ -267,14 +284,14 @@ RSpec.describe Individuo do
   end
   
   it "Se muestra correctamente los datos de un paciente" do
-    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, 80, 60)
+    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, [60, 58], [60, 59])
     s1 = "Nombre: Ana\n"
     s2 = "Edad: 20\n"
     s3 = "Sexo: Mujer\n"
     s4 = "Peso: 75kg\n"
     s5 = "Altura: 1.6m\n"
-    s6 = "Circunferencia cintura: 80cm\n"
-    s7 = "Circunferencia cadera: 60cm\n"
+    s6 = "Circunferencia cintura: [60, 58]cm\n"
+    s7 = "Circunferencia cadera: [60, 59]cm\n"
     expect(@paciente1.to_s).to eq(s1 + s2 + s3 + s4 + s5 + s6 + s7)
   end
   
