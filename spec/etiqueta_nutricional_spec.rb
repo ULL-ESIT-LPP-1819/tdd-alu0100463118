@@ -210,5 +210,8 @@ RSpec.describe ListaEtiquetas do
 end
 
 RSpec.describe Individuo do
-  
+  it "existe la clase individuo" do
+    @individuo1 = Individuo.new("Pepe", 25, 0)
+  end
+
 end
