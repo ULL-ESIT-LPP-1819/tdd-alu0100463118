@@ -13,5 +13,9 @@ class Paciente < Individuo
         @circunferencia_cintura = circunferencia_cintura
         @circunferencia_cadera = circunferencia_cadera
     end
+    
+    def obtener_nombre
+        @nombre
+    end
 end
   

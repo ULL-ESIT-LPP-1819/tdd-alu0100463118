@@ -244,4 +244,17 @@ RSpec.describe Individuo do
     expect(@paciente1).to be_a_kind_of(Individuo)
   end
 
+  it "Podemos crear una lista de individuos" do
+    @individuo1 = Individuo.new("Pepe", 25, 0)
+    @individuo2 = Individuo.new("Pepe", 25, 0)
+    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, 80, 60)
+    @paciente2 = Paciente.new("Ana", 20, 1, 75, 1.6, 80, 60)
+    @paciente3 = Paciente.new("Ana", 20, 1, 75, 1.6, 80, 60)
+    @lista8 = ListaEtiquetas.new()
+    @lista8.pushF(@individuo1)
+    @lista8.pushF(@individuo2)
+    @lista8.pushF(@paciente1)
+    @lista8.pushF(@paciente2)
+    @lista8.pushF(@paciente3)
+  end
 end
