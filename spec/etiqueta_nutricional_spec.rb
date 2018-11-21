@@ -103,7 +103,7 @@ end
 
 RSpec.describe ListaEtiquetas do
   
-    before(:each) do 
+  before(:each) do 
     @etiqueta1 = Etiqueta.new("nombre", 10, 10, 10, 10, 10, 10, [4,40])
     @etiqueta2 = Etiqueta.new("nombre2", 20, 20, 20, 20, 20, 2, [2,80])
     @etiqueta3 = Etiqueta.new("nombre3", 30, 30, 30, 30, 30, 0, [4,100])
@@ -211,12 +211,37 @@ end
 
 RSpec.describe Individuo do
   
-  it "existe la clase individuo" do
+  it "Existe la clase individuo" do
     @individuo1 = Individuo.new("Pepe", 25, 0)
   end
   
-  it "existe la clase paciente" do
+  it "Existe la clase paciente" do
     @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, 80, 60)
+  end
+  
+  it "Paciente es de tipo Paciente" do
+    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, 80, 60)
+    expect(@paciente1).to be_an_instance_of(Paciente)
+  end
+  
+  it "Individuo es de la clase Individuo" do
+    @individuo1 = Individuo.new("Pepe", 25, 0)
+    expect(@individuo1.class).to eq(Individuo)
+  end
+  
+  it "Paciente es de la clase Paciente" do
+    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, 80, 60)
+    expect(@paciente1.class).to eq(Paciente)
+  end
+  
+  it "Individuo es de tipo Individuo" do
+    @individuo1 = Individuo.new("Pepe", 25, 0)
+    expect(@individuo1).to be_an_instance_of(Individuo)
+  end
+  
+  it "Un paciente es un individuo" do
+    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, 80, 60)
+    expect(@paciente1).to be_a_kind_of(Individuo)
   end
 
 end
