@@ -17,5 +17,15 @@ class Paciente < Individuo
     def obtener_nombre
         @nombre
     end
+    
+    def to_s
+        cadena = ""
+        cadena = cadena + super.to_s
+        cadena = cadena + "Peso: #{@peso}kg\n"
+        cadena = cadena + "Altura: #{@altura}m\n"
+        cadena = cadena + "Circunferencia cintura: #{@circunferencia_cintura}cm\n"
+        cadena = cadena + "Circunferencia cadera: #{@circunferencia_cadera}cm\n"
+    end
+
 end
   
