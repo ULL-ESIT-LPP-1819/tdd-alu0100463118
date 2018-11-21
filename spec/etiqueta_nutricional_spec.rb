@@ -266,4 +266,16 @@ RSpec.describe Individuo do
     expect(@individuo1.to_s).to eq(s1 + s2 + s3)
   end
   
+  it "Se muestra correctamente los datos de un paciente" do
+    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, 80, 60)
+    s1 = "Nombre: Pepe\n"
+    s2 = "Edad: 25\n"
+    s3 = "Sexo: Hombre\n"
+    s4 = "Peso: 75kg\n"
+    s5 = "Altura: 1.6m\n"
+    s6 = "Circunferencia cintura: 80cm\n"
+    s7 = "Circunferencia cadera: 60cm\n"
+    expect(@individuo1.to_s).to eq(s1 + s2 + s3 + s4 + s5 + s6 + s7)
+  end
+  
 end
