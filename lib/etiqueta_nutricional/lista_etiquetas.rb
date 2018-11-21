@@ -71,4 +71,14 @@ class ListaEtiquetas
     end
   end
 
+  def to_s
+    nodo = @inicio
+    cadena = ""
+    while (nodo != nil)
+      cadena = cadena + nodo.value.obtener_nombre + "\n"
+      nodo = nodo.next
+    end
+    return cadena
+  end
+  
 end

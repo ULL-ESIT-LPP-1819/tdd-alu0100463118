@@ -98,6 +98,19 @@ RSpec.describe EtiquetaNutricional do
     s9 = "Sal: 10g\n"
     expect(@etiqueta1.to_s).to eq(s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + s9)
   end
+  
+end
+
+RSpec.describe ListaEtiquetas do
+  
+    before(:each) do 
+    @etiqueta1 = Etiqueta.new("nombre", 10, 10, 10, 10, 10, 10, [4,40])
+    @etiqueta2 = Etiqueta.new("nombre2", 20, 20, 20, 20, 20, 2, [2,80])
+    @etiqueta3 = Etiqueta.new("nombre3", 30, 30, 30, 30, 30, 0, [4,100])
+    @etiqueta4 = Etiqueta.new("nombre4", 40, 40, 40, 40, 40, 15, [2,120])
+    @etiqueta5 = Etiqueta.new("nombre5", 50, 50, 50, 50, 50, 4, [4,140])
+    @etiqueta6 = Etiqueta.new("nombre6", 60, 60, 60, 60, 60, 5, [2,160])
+  end
 
   it "Podemos crear nodos con etiquetas" do
     @nodo1 = Nodo.new(@etiqueta1)
@@ -107,11 +120,17 @@ RSpec.describe EtiquetaNutricional do
     @lista1 = ListaEtiquetas.new()
   end
   
+  it "Se crea la lista vacia" do
+    @lista1 = ListaEtiquetas.new()
+    expect(@lista1.inicio).to eq(nil)
+  end
+  
   it "Podemos crear una lista con las etiquetas" do
     @lista2 = ListaEtiquetas.new()
     @lista2.pushI(@etiqueta1)
     @lista2.pushI(@etiqueta2)
     @lista2.pushI(@etiqueta3)
+    expect(@lista2.inicio).not_to eq(nil)
   end
   
   it "Podemos ver el primer elemento de la lista" do
@@ -176,4 +195,20 @@ RSpec.describe EtiquetaNutricional do
     @lista7.pushF(@etiqueta5)
     expect(@lista7.clasificacion_sal).to eq("Alta cantidad de sal")
   end
+  
+  it "Podemos mostrar la lista de etiquetas" do
+    @lista8 = ListaEtiquetas.new()
+    @lista8.pushF(@etiqueta1)
+    @lista8.pushF(@etiqueta2)
+    @lista8.pushF(@etiqueta3)
+    s1 = "nombre\n"
+    s2 = "nombre2\n"
+    s3 = "nombre3\n"
+    expect(@lista8.to_s).to eq(s1 + s2 + s3)
+  end
+
+end
+
+RSpec.describe Individuo do
+  
 end
