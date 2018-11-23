@@ -313,5 +313,26 @@ RSpec.describe Individuo do
     expect(@lista.posicion(3).clasificacion_oms).to eq("Obesidad grado 3")
     expect(@lista.posicion(4).clasificacion_oms).to eq("Obesidad grado 1")
   end
+end
+
+RSpec.describe Comparable do
+  
+  before(:each) do 
+    @etiqueta1 = Etiqueta.new("nombre", 10, 10, 10, 10, 10, 10, [4,40])
+    @etiqueta2 = Etiqueta.new("nombre2", 20, 20, 20, 20, 20, 2, [2,80])
+    @etiqueta3 = Etiqueta.new("nombre3", 30, 30, 30, 30, 30, 0, [4,100])
+    @etiqueta4 = Etiqueta.new("nombre4", 40, 40, 40, 40, 40, 15, [2,120])
+    @etiqueta5 = Etiqueta.new("nombre5", 50, 50, 50, 50, 50, 4, [4,140])
+    @etiqueta6 = Etiqueta.new("nombre6", 60, 60, 60, 60, 60, 10, [2,160])
+  end
+  
+  it "Pruebas del modulo comparable" do
+   expect(@etiqueta1 > @etiqueta2).to eq(true)
+   expect(@etiqueta3 > @etiqueta2).to eq(false)
+   expect(@etiqueta6 < @etiqueta5).to eq(false)
+   expect(@etiqueta3 < @etiqueta4).to eq(true)
+   expect(@etiqueta1 == @etiqueta2).to eq(false)
+   expect(@etiqueta1 == @etiqueta6).to eq(true)
+  end
   
 end

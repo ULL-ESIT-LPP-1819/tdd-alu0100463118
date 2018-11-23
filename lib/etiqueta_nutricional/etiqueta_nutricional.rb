@@ -1,6 +1,6 @@
 class Etiqueta
   
-  include Enumerable
+  include Comparable
   
   attr_reader :nombre, :grasas, :grasas_saturadas, :hidratos_de_carbono, :azucares, :proteinas, :sal, :porciones
   
@@ -97,6 +97,7 @@ class Etiqueta
     s8 = "Azucares: #{@azucares}g\n"
     s9 = "Sal: #{@sal}g\n"
     cadena = s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + s9
+    return cadena
   end
   
 end
