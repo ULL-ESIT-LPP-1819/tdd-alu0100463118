@@ -1,6 +1,8 @@
 class Paciente < Individuo
   
     attr_reader :z
+    
+    include Comparable
   
     def initialize(nombre)
         super(x,y)              #encadenamiento (chaining)
@@ -80,5 +82,9 @@ class Paciente < Individuo
         cadena = cadena + "Circunferencia cadera: #{@circunferencia_cadera}cm\n"
     end
 
+    def <=>(other)
+        return nil unless other.instance_of? Paciente
+        @imc <=> other.imc 
+    end
 end
   

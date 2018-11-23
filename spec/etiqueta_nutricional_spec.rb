@@ -335,7 +335,7 @@ RSpec.describe Comparable do
     @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, [60, 58], [60, 59])
     @paciente2 = Paciente.new("Pedro", 22, 0, 80, 1.8, [81, 79], [61, 59])
     @paciente3 = Paciente.new("Juan", 30, 0, 110, 1.95, [71, 69], [60, 58])
-    @paciente4 = Paciente.new("Cristina", 25, 1, 120, 1.55, [55, 56], [50, 50])
+    @paciente4 = Paciente.new("Cristina", 25, 1, 90, 1.72, [55, 56], [50, 50])
     @paciente5 = Paciente.new("Bea", 18, 1, 90, 1.72, [45, 45.5], [40, 41])
   end
   
@@ -358,13 +358,13 @@ RSpec.describe Comparable do
     expect(@individuo3.between?(@individuo1, @individuo6)).to eq(true)
   end
   
-  it "Pruebas del modulo comparable para los individuos" do
-    expect(@paciente1 > @paciente2).to eq(false)
-    expect(@paciente3 < @paciente2).to eq(true)
-    expect(@paciente4 == @paciente4).to eq(true)
+  it "Pruebas del modulo comparable para los pacientes" do
+    expect(@paciente1 > @paciente2).to eq(true)
+    expect(@paciente3 < @paciente2).to eq(false)
+    expect(@paciente4 == @paciente5).to eq(true)
     expect(@paciente1 <= @paciente5).to eq(true)
     expect(@paciente3 >= @paciente4).to eq(false)
-    expect(@paciente1.between?(@paciente2, @paciente3)).to eq(true)
+    expect(@paciente1.between?(@paciente2, @paciente4)).to eq(true)
   end
   
 end
