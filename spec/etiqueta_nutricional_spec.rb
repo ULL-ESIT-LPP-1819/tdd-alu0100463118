@@ -324,6 +324,12 @@ RSpec.describe Comparable do
     @etiqueta4 = Etiqueta.new("nombre4", 40, 40, 40, 40, 40, 15, [2,120])
     @etiqueta5 = Etiqueta.new("nombre5", 50, 50, 50, 50, 50, 4, [4,140])
     @etiqueta6 = Etiqueta.new("nombre6", 60, 60, 60, 60, 60, 10, [2,160])
+    
+    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, [60, 58], [60, 59])
+    @paciente2 = Paciente.new("Pedro", 22, 0, 80, 1.8, [81, 79], [61, 59])
+    @paciente3 = Paciente.new("Juan", 30, 0, 110, 1.95, [71, 69], [60, 58])
+    @paciente4 = Paciente.new("Cristina", 25, 1, 120, 1.55, [55, 56], [50, 50])
+    @paciente5 = Paciente.new("Bea", 18, 1, 90, 1.72, [45, 45.5], [40, 41])
   end
   
   it "Pruebas del modulo comparable de las etiquetas" do
@@ -333,6 +339,16 @@ RSpec.describe Comparable do
    expect(@etiqueta1 <= @etiqueta2).to eq(false)
    expect(@etiqueta1 >= @etiqueta6).to eq(true)
    expect(@etiqueta1.between?(@etiqueta2, @etiqueta4)).to eq(true)
+  end
+  
+  
+  it "Pruebas del modulo comparable para los individuos" do
+   expect(@individuo1 > @individuo2).to eq(true)
+   expect(@individuo3 < @individuo2).to eq(true)
+   expect(@individuo4 == @individuo6).to eq(true)
+   expect(@individuo1 <= @individuo4).to eq(false)
+   expect(@individuo3 >= @individuo6).to eq(true)
+   expect(@individuo3.between?(@individuo2, @individuo4)).to eq(true)
   end
   
 end
