@@ -367,4 +367,7 @@ RSpec.describe Comparable do
     expect(@paciente1.between?(@paciente2, @paciente4)).to eq(true)
   end
   
+  it "Pruebas para comprobar que una lista de etiquetas es enumerable" do
+  end
+  
 end
