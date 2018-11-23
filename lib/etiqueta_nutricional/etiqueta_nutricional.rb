@@ -18,6 +18,8 @@ class Etiqueta
     @gramos_porcion = porciones[1]
   end
   
+ 
+  
   def obtener_nombre
     @nombre
   end
@@ -98,6 +100,12 @@ class Etiqueta
     s9 = "Sal: #{@sal}g\n"
     cadena = s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + s9
     return cadena
+  end
+  
+  def <=>(other)
+    # los comentarios locales a los métodos no generan documentación
+    return nil unless other.instance_of? Etiqueta
+    @sal <=> other.obtener_sal
   end
   
 end

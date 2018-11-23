@@ -326,13 +326,13 @@ RSpec.describe Comparable do
     @etiqueta6 = Etiqueta.new("nombre6", 60, 60, 60, 60, 60, 10, [2,160])
   end
   
-  it "Pruebas del modulo comparable" do
+  it "Pruebas del modulo comparable de las etiquetas" do
    expect(@etiqueta1 > @etiqueta2).to eq(true)
-   expect(@etiqueta3 > @etiqueta2).to eq(false)
-   expect(@etiqueta6 < @etiqueta5).to eq(false)
-   expect(@etiqueta3 < @etiqueta4).to eq(true)
-   expect(@etiqueta1 == @etiqueta2).to eq(false)
+   expect(@etiqueta3 < @etiqueta2).to eq(true)
    expect(@etiqueta1 == @etiqueta6).to eq(true)
+   expect(@etiqueta1 <= @etiqueta2).to eq(false)
+   expect(@etiqueta1 >= @etiqueta6).to eq(true)
+   expect(@etiqueta1.between?(@etiqueta2, @etiqueta4)).to eq(true)
   end
   
 end
