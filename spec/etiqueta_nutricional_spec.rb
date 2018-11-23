@@ -340,22 +340,31 @@ RSpec.describe Comparable do
   end
   
   it "Pruebas del modulo comparable de las etiquetas" do
-   expect(@etiqueta1 > @etiqueta2).to eq(true)
-   expect(@etiqueta3 < @etiqueta2).to eq(true)
-   expect(@etiqueta1 == @etiqueta6).to eq(true)
-   expect(@etiqueta1 <= @etiqueta2).to eq(false)
-   expect(@etiqueta1 >= @etiqueta6).to eq(true)
-   expect(@etiqueta1.between?(@etiqueta2, @etiqueta4)).to eq(true)
+    expect(@etiqueta1 > @etiqueta2).to eq(true)
+    expect(@etiqueta3 < @etiqueta2).to eq(true)
+    expect(@etiqueta1 == @etiqueta6).to eq(true)
+    expect(@etiqueta1 <= @etiqueta2).to eq(false)
+    expect(@etiqueta1 >= @etiqueta6).to eq(true)
+    expect(@etiqueta1.between?(@etiqueta2, @etiqueta4)).to eq(true)
   end
   
   
   it "Pruebas del modulo comparable para los individuos" do
-   expect(@individuo1 > @individuo2).to eq(false)
-   expect(@individuo3 < @individuo2).to eq(true)
-   expect(@individuo4 == @individuo3).to eq(true)
-   expect(@individuo1 <= @individuo4).to eq(true)
-   expect(@individuo3 >= @individuo6).to eq(false)
-   expect(@individuo3.between?(@individuo1, @individuo6)).to eq(true)
+    expect(@individuo1 > @individuo2).to eq(false)
+    expect(@individuo3 < @individuo2).to eq(true)
+    expect(@individuo4 == @individuo3).to eq(true)
+    expect(@individuo1 <= @individuo4).to eq(true)
+    expect(@individuo3 >= @individuo6).to eq(false)
+    expect(@individuo3.between?(@individuo1, @individuo6)).to eq(true)
+  end
+  
+  it "Pruebas del modulo comparable para los individuos" do
+    expect(@paciente1 > @paciente2).to eq(false)
+    expect(@paciente3 < @paciente2).to eq(true)
+    expect(@paciente4 == @paciente4).to eq(true)
+    expect(@paciente1 <= @paciente5).to eq(true)
+    expect(@paciente3 >= @paciente4).to eq(false)
+    expect(@paciente1.between?(@paciente2, @paciente3)).to eq(true)
   end
   
 end
