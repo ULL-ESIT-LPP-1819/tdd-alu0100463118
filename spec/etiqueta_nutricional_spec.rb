@@ -464,7 +464,7 @@ RSpec.describe Comparable do
     expect(resultado).to eq(resultado2)
   end
   
-   it "Lista de etiquetas metodo collect" do
+   it "Lista de pacientes metodo collect" do
     @lista = ListaEtiquetas.new()
     @lista.pushF(@paciente1)
     @lista.pushF(@paciente2)
@@ -487,4 +487,17 @@ RSpec.describe Comparable do
     resultado2 = [@etiqueta1, @etiqueta4]
     expect(resultado).to eq(resultado2)
   end
+  
+  it "Lista de pacientes metodo select" do
+    @lista = ListaEtiquetas.new()
+    @lista.pushF(@paciente1)
+    @lista.pushF(@paciente2)
+    @lista.pushF(@paciente3)
+    @lista.pushF(@paciente4)
+    @lista.pushF(@paciente5)
+    resultado = @lista.select {|x| x.imc > 30}
+    resultado2 = [@paciente4, @paciente5]
+    expect(resultado).to eq(resultado2)
+  end
+  
 end
