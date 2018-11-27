@@ -453,4 +453,18 @@ RSpec.describe Comparable do
     expect(@minimo).to eq(@paciente2)
   end
   
+  it "Lista de etiquetas metodo collect" do
+    @lista = ListaEtiquetas.new()
+    @lista.pushF(@etiqueta1)
+    @lista.pushF(@etiqueta2)
+    @lista.pushF(@etiqueta3)
+    @lista.pushF(@etiqueta4)
+    @lista.pushF(@etiqueta5)
+    @minimo = @lista.min
+    resultado = @lista.collect {|x| x.obtener_nombre}
+    resultado2 = "[\"nombre\", \"nombre2\", \"nombre3\", \"nombre4\", \"nombre5\"]"
+    puts "#{resultado}"
+    expect(@resultado).to eq(@resultado2)
+  end
+  
 end
