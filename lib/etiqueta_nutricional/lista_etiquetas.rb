@@ -2,10 +2,20 @@ Nodo = Struct.new(:value, :next, :prev)
 
 class ListaEtiquetas
   
+  include Enumerable
+  
   def initialize()
     @inicio = Nodo.new(nil)
     @fin = Nodo.new(nil)
   end 
+  
+  def each
+    nodo = @inicio
+    while (nodo != nil)
+      yield nodo.value
+      nodo = nodo.next
+    end
+  end
   
   def pushI(nodo1)
     nodo = Nodo.new(nodo1, nil, nil)
