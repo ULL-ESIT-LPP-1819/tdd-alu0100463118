@@ -441,4 +441,16 @@ RSpec.describe Comparable do
     expect(@minimo).to eq(@etiqueta3)
   end
   
+  it "Lista de pacientes metodo min" do
+    @lista = ListaEtiquetas.new()
+    @lista.pushF(@paciente1)
+    @lista.pushF(@paciente2)
+    @lista.pushF(@paciente3)
+    @lista.pushF(@paciente4)
+    @lista.pushF(@paciente5)
+    @minimo = @lista.min
+    
+    expect(@minimo).to eq(@paciente2)
+  end
+  
 end
