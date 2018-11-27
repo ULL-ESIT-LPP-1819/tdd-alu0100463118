@@ -417,4 +417,16 @@ RSpec.describe Comparable do
     expect(@maximo).to eq(@etiqueta4)
   end
   
+  it "Lista de pacientes metodo max" do
+    @lista = ListaEtiquetas.new()
+    @lista.pushF(@paciente1)
+    @lista.pushF(@paciente2)
+    @lista.pushF(@paciente3)
+    @lista.pushF(@paciente4)
+    @lista.pushF(@paciente5)
+    @maximo = @lista.max
+    
+    expect(@maximo).to eq(@paciente4)
+  end
+  
 end
