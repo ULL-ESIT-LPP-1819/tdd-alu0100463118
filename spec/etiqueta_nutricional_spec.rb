@@ -381,9 +381,8 @@ RSpec.describe Comparable do
     s4 = "nombre\n"
     s5 = "nombre4\n"
     @lista = @lista.sort
-    cadena = ""
-    @lista.each { |a| cadena = cadena + "#{a.obtener_nombre}\n"}
-    expect(cadena).to eq(s1 + s2 + s3 + s4 + s5)
+    resultado2 = [@etiqueta3, @etiqueta2, @etiqueta5, @etiqueta1, @etiqueta4]
+    expect(@lista).to eq(resultado2)
   end
   
   it "Pruebas para comprobar que una lista de pacientes es enumerable / Metodo sort" do
@@ -477,4 +476,15 @@ RSpec.describe Comparable do
     expect(resultado).to eq(resultado2)
   end
   
+   it "Lista de etiquetas metodo select" do
+    @lista = ListaEtiquetas.new()
+    @lista.pushF(@etiqueta1)
+    @lista.pushF(@etiqueta2)
+    @lista.pushF(@etiqueta3)
+    @lista.pushF(@etiqueta4)
+    @lista.pushF(@etiqueta5)
+    resultado = @lista.select {|x| x.sal > 8}
+    resultado2 = [@etiqueta1, @etiqueta4]
+    expect(resultado).to eq(resultado2)
+  end
 end
