@@ -387,8 +387,7 @@ RSpec.describe Comparable do
   end
   
   it "Pruebas para comprobar que una lista de pacientes es enumerable / Metodo sort" do
-     
-  @lista = ListaEtiquetas.new()
+    @lista = ListaEtiquetas.new()
     @lista.pushF(@paciente1)    #Ana
     @lista.pushF(@paciente2)    #Pedro
     @lista.pushF(@paciente3)    #Juan
@@ -405,4 +404,17 @@ RSpec.describe Comparable do
     
     expect(cadena).to eq(s1 + s2 + s3 + s4 + s5)
   end
+  
+  it "Lista de etiquetas metodo max" do
+    @lista = ListaEtiquetas.new()
+    @lista.pushF(@etiqueta1)
+    @lista.pushF(@etiqueta2)
+    @lista.pushF(@etiqueta3)
+    @lista.pushF(@etiqueta4)
+    @lista.pushF(@etiqueta5)
+    @maximo = @lista.max
+    
+    expect(@maximo).to eq(@etiqueta4)
+  end
+  
 end
