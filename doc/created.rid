@@ -1,0 +1,18 @@
+Tue, 27 Nov 2018 17:14:56 +0000
+./README.md	Wed, 07 Nov 2018 13:53:09 +0000
+./Rakefile	Tue, 06 Nov 2018 09:17:23 +0000
+./Gemfile	Tue, 06 Nov 2018 09:17:23 +0000
+./etiqueta_nutricional.gemspec	Wed, 21 Nov 2018 05:23:47 +0000
+./bin/setup	Tue, 06 Nov 2018 09:17:23 +0000
+./bin/console	Tue, 06 Nov 2018 09:17:23 +0000
+./spec/spec_helper.rb	Tue, 06 Nov 2018 09:17:23 +0000
+./spec/etiqueta_nutricional_spec.rb	Tue, 27 Nov 2018 17:09:44 +0000
+./lib/etiqueta_nutricional/individuo.rb	Fri, 23 Nov 2018 17:07:11 +0000
+./lib/etiqueta_nutricional/version.rb	Fri, 23 Nov 2018 17:31:36 +0000
+./lib/etiqueta_nutricional/etiqueta_nutricional.rb	Fri, 23 Nov 2018 17:06:51 +0000
+./lib/etiqueta_nutricional/paciente.rb	Fri, 23 Nov 2018 17:22:55 +0000
+./lib/etiqueta_nutricional/lista_etiquetas.rb	Mon, 26 Nov 2018 17:36:12 +0000
+./lib/etiqueta_nutricional.rb	Wed, 21 Nov 2018 05:39:53 +0000
+./CODE_OF_CONDUCT.md	Tue, 06 Nov 2018 09:17:23 +0000
+./Gemfile.lock	Fri, 23 Nov 2018 17:40:10 +0000
+./Guardfile	Wed, 21 Nov 2018 05:24:54 +0000
