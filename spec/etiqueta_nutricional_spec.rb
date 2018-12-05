@@ -324,6 +324,7 @@ RSpec.describe Comparable do
     @etiqueta4 = Etiqueta.new("nombre4", 40, 40, 40, 40, 40, 15, [2,120])
     @etiqueta5 = Etiqueta.new("nombre5", 50, 50, 50, 50, 50, 4, [4,140])
     @etiqueta6 = Etiqueta.new("nombre6", 60, 60, 60, 60, 60, 10, [2,160])
+    @etiqueta7 = Etiqueta.new("nombre7", 10, 10, 10, 10, 10, 10, [4,40])
     
     @individuo1 = Individuo.new("Pepe", 20, 0)
     @individuo2 = Individuo.new("Andres", 30, 0)
@@ -340,12 +341,12 @@ RSpec.describe Comparable do
   end
   
   it "Pruebas del modulo comparable de las etiquetas" do
-    expect(@etiqueta1 > @etiqueta2).to eq(true)
-    expect(@etiqueta3 < @etiqueta2).to eq(true)
-    expect(@etiqueta1 == @etiqueta6).to eq(true)
-    expect(@etiqueta1 <= @etiqueta2).to eq(false)
-    expect(@etiqueta1 >= @etiqueta6).to eq(true)
-    expect(@etiqueta1.between?(@etiqueta2, @etiqueta4)).to eq(true)
+    expect(@etiqueta2 > @etiqueta1).to eq(true)
+    expect(@etiqueta2 < @etiqueta3).to eq(true)
+    expect(@etiqueta1 == @etiqueta7).to eq(true)
+    expect(@etiqueta1 <= @etiqueta2).to eq(true)
+    expect(@etiqueta6 >= @etiqueta1).to eq(true)
+    expect(@etiqueta2.between?(@etiqueta1, @etiqueta4)).to eq(true)
   end
   
   
@@ -374,14 +375,8 @@ RSpec.describe Comparable do
     @lista.pushF(@etiqueta3)
     @lista.pushF(@etiqueta1)
     @lista.pushF(@etiqueta5)
-    # 3 2 5 1 4
-    s1 = "nombre3\n"
-    s2 = "nombre2\n"
-    s3 = "nombre5\n"
-    s4 = "nombre\n"
-    s5 = "nombre4\n"
     @lista = @lista.sort
-    resultado2 = [@etiqueta3, @etiqueta2, @etiqueta5, @etiqueta1, @etiqueta4]
+    resultado2 = [@etiqueta1, @etiqueta2, @etiqueta3, @etiqueta4, @etiqueta5]
     expect(@lista).to eq(resultado2)
   end
   
@@ -413,7 +408,7 @@ RSpec.describe Comparable do
     @lista.pushF(@etiqueta5)
     @maximo = @lista.max
     
-    expect(@maximo).to eq(@etiqueta4)
+    expect(@maximo).to eq(@etiqueta5)
   end
   
   it "Lista de pacientes metodo max" do
@@ -437,7 +432,7 @@ RSpec.describe Comparable do
     @lista.pushF(@etiqueta5)
     @minimo = @lista.min
     
-    expect(@minimo).to eq(@etiqueta3)
+    expect(@minimo).to eq(@etiqueta1)
   end
   
   it "Lista de pacientes metodo min" do

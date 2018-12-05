@@ -105,7 +105,7 @@ class Etiqueta
   def <=>(other)
     # los comentarios locales a los métodos no generan documentación
     return nil unless other.instance_of? Etiqueta
-    @sal <=> other.obtener_sal
+    @valor_energetico_kcal <=> other.obtener_valor_energetico_kcal
   end
   
 end
