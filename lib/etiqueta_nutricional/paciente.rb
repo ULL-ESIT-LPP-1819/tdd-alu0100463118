@@ -1,14 +1,11 @@
 class Paciente < Individuo
   
-    attr_reader :z
+    attr_reader :nombre, :edad, :sexo, :peso, :altura, :circunferencia_cintura, :circunferencia_cadera, :actividad_fisica
     
     include Comparable
   
-    def initialize(nombre)
-        super(x,y)              #encadenamiento (chaining)
-        @z = z
-    end
-    def initialize(nombre, edad, sexo, peso, altura, circunferencia_cintura, circunferencia_cadera)
+
+    def initialize(nombre, edad, sexo, peso, altura, circunferencia_cintura, circunferencia_cadera, actividad_fisica)
         super(nombre, edad, sexo)
         @peso = peso
         @altura = altura
@@ -17,6 +14,8 @@ class Paciente < Individuo
         @imc = imc
         @grasa = p_grasa
         @rcc = rcc
+        @actividad_fisica = actividad_fisica
+        
     end
     
     def imc
@@ -85,6 +84,38 @@ class Paciente < Individuo
     def <=>(other)
         return nil unless other.instance_of? Paciente
         @imc <=> other.imc 
+    end
+    
+    def valoracion(menu)
+        
+        gasto_energetico_basal = 0
+        if (@sexo == 1) # mujer
+            gasto_energetico_basal = (10 * @peso) + (6.25 * @altura) - (5 * @edad) - 161
+        else # Hombre
+            gasto_energetico_basal = (10 * @peso) + (6.25 * @altura) - (5 * @edad) + 5
+        end
+        
+        efecto_termogeno = gasto_energetico_basal * 0.1
+        gasto_actividad_fisica = 0
+        
+        if (@actividad_fisica == "reposo")
+            gasto_actividad_fisica = gasto_energetico_basal * 0
+        elsif (@actividad_fisica == "Actividad ligera")
+            gasto_actividad_fisica = gasto_energetico_basal * 0.12
+        elsif (@actividad_fisica == "Actividad moderada")
+            gasto_actividad_fisica = gasto_energetico_basal * 0.27
+        else
+            gasto_actividad_fisica = gasto_energetico_basal * 0.54
+        end
+        
+        gasto_energetico_total = gasto_energetico_basal + efecto_termogeno + gasto_actividad_fisica
+        calorias_menu = menu.reduce(0) { |sum, value| sum + value.obtener_valor_energetico_kcal }
+        
+        if (gasto_energetico_total < (calorias_menu * 0.9))
+            return true;
+        else
+            return false;
+        end
     end
 end
   
