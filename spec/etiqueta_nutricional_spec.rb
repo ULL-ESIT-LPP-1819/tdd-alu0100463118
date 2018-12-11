@@ -496,3 +496,53 @@ RSpec.describe Comparable do
   end
   
 end
+
+RSpec.describe ListaEtiquetas do
+  
+  before(:each) do 
+    @etiqueta1 = Etiqueta.new("nombre", 10, 10, 10, 10, 10, 10, [4,40])
+    @etiqueta2 = Etiqueta.new("nombre2", 20, 20, 20, 20, 20, 2, [2,80])
+    @etiqueta3 = Etiqueta.new("nombre3", 30, 30, 30, 30, 30, 0, [4,100])
+    @etiqueta4 = Etiqueta.new("nombre4", 40, 40, 40, 40, 40, 15, [2,120])
+    @etiqueta5 = Etiqueta.new("nombre5", 50, 50, 50, 50, 50, 4, [4,140])
+    @etiqueta6 = Etiqueta.new("nombre6", 60, 60, 60, 60, 60, 10, [2,160])
+    @etiqueta7 = Etiqueta.new("nombre7", 10, 10, 10, 10, 10, 10, [4,40])
+    
+    @menu1 = ListaEtiquetas.new()
+    @menu1.pushF(@etiqueta1)
+    @menu1.pushF(@etiqueta2)
+    @menu1.pushF(@etiqueta5)
+    @menu1.pushF(@etiqueta7)
+    
+    @menu2 = ListaEtiquetas.new()
+    @menu2.pushF(@etiqueta1)
+    @menu2.pushF(@etiqueta3)
+    @menu2.pushF(@etiqueta4)
+    @menu2.pushF(@etiqueta5)
+    @menu2.pushF(@etiqueta6)
+    
+    
+    @individuo1 = Individuo.new("Pepe", 20, 0)
+    @individuo2 = Individuo.new("Andres", 30, 0)
+    @individuo3 = Individuo.new("Andrea", 25, 0)
+    @individuo4 = Individuo.new("John", 25, 0)
+    @individuo5 = Individuo.new("Jesus", 27, 0)
+    @individuo6 = Individuo.new("Cris", 36, 0)
+    
+    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, [60, 58], [60, 59])
+    @paciente2 = Paciente.new("Pedro", 22, 0, 80, 1.8, [81, 79], [61, 59])
+    @paciente3 = Paciente.new("Juan", 30, 0, 110, 1.95, [71, 69], [60, 58])
+    @paciente4 = Paciente.new("Cristina", 25, 1, 90, 1.72, [55, 56], [50, 50])
+    @paciente5 = Paciente.new("Bea", 18, 1, 90, 1.72, [45, 45.5], [40, 41])
+  end
+  
+  it "La cantidad de la alimentacion debe ser suficiente para cubrir las exigencias caloricas del organismo y mantener el equilibrio de su balance" do
+    expect(@paciente1.valoracion(@menu1)).to eq(true)
+    expect(@paciente1.valoracion(@menu2)).to eq(true)
+    expect(@paciente2.valoracion(@menu1)).to eq(true)
+    expect(@paciente2.valoracion(@menu2)).to eq(true)
+    expect(@paciente3.valoracion(@menu1)).to eq(true)
+    expect(@paciente3.valoracion(@menu2)).to eq(true)
+
+  end
+end
