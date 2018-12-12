@@ -99,9 +99,9 @@ RSpec.describe EtiquetaNutricional do
     expect(@etiqueta1.to_s).to eq(s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + s9)
   end
   
-end
+#end
 
-RSpec.describe ListaEtiquetas do
+#RSpec.describe ListaEtiquetas do
   
   before(:each) do 
     @etiqueta1 = Etiqueta.new("nombre", 10, 10, 10, 10, 10, 10, [4,40])
