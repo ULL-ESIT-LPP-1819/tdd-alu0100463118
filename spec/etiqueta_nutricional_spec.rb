@@ -207,9 +207,9 @@ RSpec.describe EtiquetaNutricional do
     expect(@lista8.to_s).to eq(s1 + s2 + s3)
   end
 
-end
+#end
 
-RSpec.describe Individuo do
+#RSpec.describe Individuo do
   
   it "Existe la clase individuo" do
     @individuo1 = Individuo.new("Pepe", 25, 0)
@@ -313,9 +313,9 @@ RSpec.describe Individuo do
     expect(@lista.posicion(3).clasificacion_oms).to eq("Obesidad grado 3")
     expect(@lista.posicion(4).clasificacion_oms).to eq("Obesidad grado 1")
   end
-end
+#end
 
-RSpec.describe Comparable do
+#RSpec.describe Comparable do
   
   before(:each) do 
     @etiqueta1 = Etiqueta.new("nombre", 10, 10, 10, 10, 10, 10, [4,40])
@@ -495,9 +495,9 @@ RSpec.describe Comparable do
     expect(resultado).to eq(resultado2)
   end
   
-end
+#end
 
-RSpec.describe ListaEtiquetas do
+#RSpec.describe ListaEtiquetas do
   
   before(:each) do 
     @etiqueta1 = Etiqueta.new("Lentejas", 7, 7, 7, 7, 7, 7, [4,40])
