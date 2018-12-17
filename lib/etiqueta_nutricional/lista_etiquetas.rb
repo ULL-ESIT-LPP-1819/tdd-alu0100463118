@@ -3,6 +3,7 @@ Nodo = Struct.new(:value, :next, :prev)
 class ListaEtiquetas
   
   include Enumerable
+  include Comparable
   
   def initialize()
     @inicio = Nodo.new(nil)
@@ -163,5 +164,9 @@ class ListaEtiquetas
       @revisado.push(@menor.value)
     end
     return @revisado
+  end
+  
+  def <=>(other)
+    valor_energetico <=> other.valor_energetico
   end
 end

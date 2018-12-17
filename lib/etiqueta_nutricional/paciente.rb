@@ -83,7 +83,7 @@ class Paciente < Individuo
 
     def <=>(other)
         return nil unless other.instance_of? Paciente
-        @imc <=> other.imc 
+        valoracion_nutricional <=> other.valoracion_nutricional 
     end
     
     def valoracion(menu)

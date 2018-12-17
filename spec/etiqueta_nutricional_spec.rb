@@ -360,12 +360,12 @@ RSpec.describe Comparable do
   end
   
   it "Pruebas del modulo comparable para los pacientes" do
-    expect(@paciente1 > @paciente2).to eq(true)
+    expect(@paciente1 < @paciente2).to eq(true)
     expect(@paciente3 < @paciente2).to eq(false)
-    expect(@paciente4 == @paciente5).to eq(true)
+    expect(@paciente4 == @paciente5).to eq(false)
     expect(@paciente1 <= @paciente5).to eq(true)
-    expect(@paciente3 >= @paciente4).to eq(false)
-    expect(@paciente1.between?(@paciente2, @paciente4)).to eq(true)
+    expect(@paciente3 >= @paciente4).to eq(true)
+    expect(@paciente4.between?(@paciente3, @paciente2)).to eq(false)
   end
   
   it "Pruebas para comprobar que una lista de etiquetas es enumerable / Metodo sort" do
@@ -387,11 +387,11 @@ RSpec.describe Comparable do
     @lista.pushF(@paciente3)    #Juan
     @lista.pushF(@paciente4)    #Cristina
     @lista.pushF(@paciente5)    #Bea
-    s1 = "Pedro\n"
-    s2 = "Juan\n"
-    s3 = "Ana\n"
-    s4 = "Cristina\n"
-    s5 = "Bea\n"
+    s1 = "Ana\n"
+    s2 = "Cristina\n"
+    s3 = "Bea\n"
+    s4 = "Pedro\n"
+    s5 = "Juan\n"
     @lista = @lista.sort
     cadena = ""
     @lista.each { |a| cadena = cadena + "#{a.obtener_nombre}\n"}
@@ -420,7 +420,7 @@ RSpec.describe Comparable do
     @lista.pushF(@paciente5)
     @maximo = @lista.max
     
-    expect(@maximo).to eq(@paciente4)
+    expect(@maximo).to eq(@paciente3)
   end
   
   it "Lista de etiquetas metodo min" do
@@ -444,7 +444,7 @@ RSpec.describe Comparable do
     @lista.pushF(@paciente5)
     @minimo = @lista.min
     
-    expect(@minimo).to eq(@paciente2)
+    expect(@minimo).to eq(@paciente1)
   end
   
   it "Lista de etiquetas metodo collect" do
@@ -676,6 +676,16 @@ RSpec.describe ListaEtiquetas do
   
   it "Se puede ordenar una lista doblemente enlazada de individuos mediante un bucle for" do
     @valoracion_ordenada = @valoracion1.ordenar_for
+    expect(@valoracion_ordenada).to eq([@paciente1, @paciente6, @paciente8, @paciente4, @paciente9, @paciente5, @paciente10, @paciente3, @paciente2, @paciente7])
+  end
+  
+  it "Se puede ordenar un array de menus con el metodo sort" do
+    @menuDietetico_ordenado = @menuDietetico.sort
+    expect(@menuDietetico_ordenado).to eq([@menu1, @menu5, @menu3, @menu6, @menu9, @menu7, @menu4, @menu8, @menu2, @menu10])
+  end
+  
+  it "Se puede ordenar una lista doblemente enlazada de individuos mediante el metodo sort" do
+    @valoracion_ordenada = @valoracion1.sort
     expect(@valoracion_ordenada).to eq([@paciente1, @paciente6, @paciente8, @paciente4, @paciente9, @paciente5, @paciente10, @paciente3, @paciente2, @paciente7])
   end
 end
