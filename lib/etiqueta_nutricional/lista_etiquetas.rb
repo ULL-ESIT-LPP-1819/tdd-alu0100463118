@@ -51,6 +51,27 @@ class ListaEtiquetas
     @fin.prev = nil
   end
   
+  def pop(nodo_borrar)
+    
+    if (@inicio.next == nil)
+      @inicio = nil
+    else
+      if (nodo_borrar == @inicio)
+        @inicio = @inicio.next
+        @inicio.prev = nil
+      else
+        nodo = @inicio
+        while (nodo != nodo_borrar)
+          nodo = nodo.next
+        end
+        nodo.prev.next = nodo.next
+        if (nodo.next != nil)
+          nodo.next.prev = nodo.prev
+        end
+      end
+    end
+  end
+  
   def inicio
     @inicio.value
   end
@@ -99,12 +120,48 @@ class ListaEtiquetas
     return nodo.value
   end
   
+  def pos(po)
+    nodo = @inicio
+    po.times do
+      nodo = nodo.next
+    end
+    return nodo
+  end
+  
   def valor_energetico
     calorias_menu = self.reduce(0) { |sum, value| sum + value.obtener_valor_energetico_kcal }
     return calorias_menu
   end
   
+  def numero_elementos
+    if @inicio == nil
+      return 0
+    else
+      nodo = @inicio
+      numero = 0
+      while (nodo != nil)
+        numero = numero + 1
+        nodo = nodo.next
+      end
+      return numero
+    end
+  end
+  
   def ordenar_for
-    
+    @ordenado = self
+    @menor
+    @revisado = [];
+    for i in (0..self.numero_elementos - 1)
+      
+      @menor = @ordenado.pos(0)
+      for j in (0..@ordenado.numero_elementos - 1)
+        if (@menor.value.valoracion_nutricional > @ordenado.posicion(j).valoracion_nutricional)
+          @menor = @ordenado.pos(j)
+        end
+      end
+      @ordenado.pop(@menor)
+      @revisado.push(@menor.value)
+    end
+    return @revisado
   end
 end

@@ -640,11 +640,11 @@ RSpec.describe ListaEtiquetas do
     @paciente3 = Paciente.new("Juan", 30, 0, 110, 1.95, [71, 69], [60, 58], "reposo")
     @paciente4 = Paciente.new("Cristina", 25, 1, 90, 1.72, [55, 56], [50, 50], "Actividad ligera")
     @paciente5 = Paciente.new("Bea", 18, 1, 90, 1.72, [45, 45.5], [40, 41], "Actividad moderada")
-    @paciente6 = Paciente.new("Pepa", 20, 1, 75, 1.6, [60, 58], [60, 59], "Actividad moderada")
-    @paciente7 = Paciente.new("Jose", 22, 0, 80, 1.8, [81, 79], [61, 59], "Actividad intensa")
-    @paciente8 = Paciente.new("Jaime", 30, 0, 110, 1.95, [71, 69], [60, 58], "reposo")
-    @paciente9 = Paciente.new("Alicia", 25, 1, 90, 1.72, [55, 56], [50, 50], "Actividad ligera")
-    @paciente10 = Paciente.new("Carmen", 18, 1, 90, 1.72, [45, 45.5], [40, 41], "Actividad moderada")
+    @paciente6 = Paciente.new("Pepa", 20, 1, 76, 1.6, [60, 58], [60, 59], "Actividad moderada")
+    @paciente7 = Paciente.new("Jose", 22, 0, 87, 1.8, [81, 79], [61, 59], "Actividad intensa")
+    @paciente8 = Paciente.new("Jaime", 30, 0, 79, 1.95, [71, 69], [60, 58], "reposo")
+    @paciente9 = Paciente.new("Alicia", 25, 1, 98, 1.72, [55, 56], [50, 50], "Actividad ligera")
+    @paciente10 = Paciente.new("Carmen", 18, 1, 95, 1.72, [45, 45.5], [40, 41], "Actividad moderada")
 
     @valoracion1 = ListaEtiquetas.new()
     @valoracion1.pushF(@paciente1)
@@ -676,6 +676,6 @@ RSpec.describe ListaEtiquetas do
   
   it "Se puede ordenar una lista doblemente enlazada de individuos mediante un bucle for" do
     @valoracion_ordenada = @valoracion1.ordenar_for
-    expect(@valoracion_ordenada).to eq([@paciente1, @paciente3, @paciente5, @paciente7, @paciente8, @paciente9, @paciente10, @paciente2, @paciente4, @paciente6])
+    expect(@valoracion_ordenada).to eq([@paciente1, @paciente6, @paciente8, @paciente4, @paciente9, @paciente5, @paciente10, @paciente3, @paciente2, @paciente7])
   end
 end
