@@ -638,11 +638,34 @@ RSpec.describe ListaEtiquetas do
     @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, [60, 58], [60, 59], "Actividad moderada")
     @paciente2 = Paciente.new("Pedro", 22, 0, 80, 1.8, [81, 79], [61, 59], "Actividad intensa")
     @paciente3 = Paciente.new("Juan", 30, 0, 110, 1.95, [71, 69], [60, 58], "reposo")
-    @paciente4 = Paciente.new("Cristina", 25, 1, 90, 1.72, [55, 56], [50, 50], "reposo")
-    @paciente5 = Paciente.new("Bea", 18, 1, 90, 1.72, [45, 45.5], [40, 41], "reposo")
+    @paciente4 = Paciente.new("Cristina", 25, 1, 90, 1.72, [55, 56], [50, 50], "Actividad ligera")
+    @paciente5 = Paciente.new("Bea", 18, 1, 90, 1.72, [45, 45.5], [40, 41], "Actividad moderada")
+    @paciente6 = Paciente.new("Pepa", 20, 1, 75, 1.6, [60, 58], [60, 59], "Actividad moderada")
+    @paciente7 = Paciente.new("Jose", 22, 0, 80, 1.8, [81, 79], [61, 59], "Actividad intensa")
+    @paciente8 = Paciente.new("Jaime", 30, 0, 110, 1.95, [71, 69], [60, 58], "reposo")
+    @paciente9 = Paciente.new("Alicia", 25, 1, 90, 1.72, [55, 56], [50, 50], "Actividad ligera")
+    @paciente10 = Paciente.new("Carmen", 18, 1, 90, 1.72, [45, 45.5], [40, 41], "Actividad moderada")
+
+    @valoracion1 = ListaEtiquetas.new()
+    @valoracion1.pushF(@paciente1)
+    @valoracion1.pushF(@paciente2)
+    @valoracion1.pushF(@paciente3)
+    @valoracion1.pushF(@paciente4)
+    @valoracion1.pushF(@paciente5)
+    @valoracion1.pushF(@paciente6)
+    @valoracion1.pushF(@paciente7)
+    @valoracion1.pushF(@paciente8)
+    @valoracion1.pushF(@paciente9)
+    @valoracion1.pushF(@paciente10)
+
+
   end
   
   it "Se puede crear un array de menus" do
     expect(@menuDietetico).to eq([@menu1, @menu2, @menu3, @menu4, @menu5, @menu6, @menu7, @menu8, @menu9, @menu10])
+  end
+  
+  it "Se puede crear una lista doblemente enlazada con valoraciones nutricionales" do
+    expect(@valoracion1.inicio).to eq(@paciente1)
   end
 end
