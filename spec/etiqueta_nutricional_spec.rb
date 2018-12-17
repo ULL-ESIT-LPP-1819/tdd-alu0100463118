@@ -673,4 +673,9 @@ RSpec.describe ListaEtiquetas do
     @menuDietetico_ordenado = @menuDietetico.ordenar_for
     expect(@menuDietetico_ordenado).to eq([@menu1, @menu5, @menu3, @menu6, @menu9, @menu7, @menu4, @menu8, @menu2, @menu10])
   end
+  
+  it "Se puede ordenar una lista doblemente enlazada de individuos mediante un bucle for" do
+    @valoracion_ordenada = @valoracion1.ordenar_for
+    expect(@valoracion_ordenada).to eq([@paciente1, @paciente3, @paciente5, @paciente7, @paciente8, @paciente9, @paciente10, @paciente2, @paciente4, @paciente6])
+  end
 end

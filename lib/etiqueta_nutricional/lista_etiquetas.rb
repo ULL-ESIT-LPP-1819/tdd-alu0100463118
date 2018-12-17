@@ -103,4 +103,8 @@ class ListaEtiquetas
     calorias_menu = self.reduce(0) { |sum, value| sum + value.obtener_valor_energetico_kcal }
     return calorias_menu
   end
+  
+  def ordenar_for
+    
+  end
 end
