@@ -668,4 +668,9 @@ RSpec.describe ListaEtiquetas do
   it "Se puede crear una lista doblemente enlazada con valoraciones nutricionales" do
     expect(@valoracion1.inicio).to eq(@paciente1)
   end
+  
+  it "Se puede ordenar un array de menus con un bucle for" do
+    @menuDietetico_ordenado = @menuDietetico.ordenar_for
+    expect(@menuDietetico_ordenado).to eq([@menu1, @menu5, @menu3, @menu6, @menu9, @menu7, @menu4, @menu8, @menu2, @menu10])
+  end
 end

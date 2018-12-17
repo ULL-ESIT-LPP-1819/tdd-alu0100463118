@@ -117,5 +117,32 @@ class Paciente < Individuo
             return false;
         end
     end
+    
+    def valoracion_nutricional
+        
+        gasto_energetico_basal = 0
+        if (@sexo == 1) # mujer
+            gasto_energetico_basal = (10 * @peso) + (6.25 * @altura) - (5 * @edad) - 161
+        else # Hombre
+            gasto_energetico_basal = (10 * @peso) + (6.25 * @altura) - (5 * @edad) + 5
+        end
+        
+        efecto_termogeno = gasto_energetico_basal * 0.1
+        gasto_actividad_fisica = 0
+        
+        if (@actividad_fisica == "reposo")
+            gasto_actividad_fisica = gasto_energetico_basal * 0
+        elsif (@actividad_fisica == "Actividad ligera")
+            gasto_actividad_fisica = gasto_energetico_basal * 0.12
+        elsif (@actividad_fisica == "Actividad moderada")
+            gasto_actividad_fisica = gasto_energetico_basal * 0.27
+        else
+            gasto_actividad_fisica = gasto_energetico_basal * 0.54
+        end
+        
+        gasto_energetico_total = gasto_energetico_basal + efecto_termogeno + gasto_actividad_fisica
+        
+        return gasto_energetico_total
+    end
 end
   
