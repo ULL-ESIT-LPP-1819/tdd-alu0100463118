@@ -99,9 +99,9 @@ RSpec.describe EtiquetaNutricional do
     expect(@etiqueta1.to_s).to eq(s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + s9)
   end
   
-#end
+end
 
-#RSpec.describe ListaEtiquetas do
+RSpec.describe ListaEtiquetas do
   
   before(:each) do 
     @etiqueta1 = Etiqueta.new("nombre", 10, 10, 10, 10, 10, 10, [4,40])
@@ -207,9 +207,9 @@ RSpec.describe EtiquetaNutricional do
     expect(@lista8.to_s).to eq(s1 + s2 + s3)
   end
 
-#end
+end
 
-#RSpec.describe Individuo do
+RSpec.describe Individuo do
   
   it "Existe la clase individuo" do
     @individuo1 = Individuo.new("Pepe", 25, 0)
@@ -313,9 +313,9 @@ RSpec.describe EtiquetaNutricional do
     expect(@lista.posicion(3).clasificacion_oms).to eq("Obesidad grado 3")
     expect(@lista.posicion(4).clasificacion_oms).to eq("Obesidad grado 1")
   end
-#end
+end
 
-#RSpec.describe Comparable do
+RSpec.describe Comparable do
   
   before(:each) do 
     @etiqueta1 = Etiqueta.new("nombre", 10, 10, 10, 10, 10, 10, [4,40])
@@ -495,9 +495,9 @@ RSpec.describe EtiquetaNutricional do
     expect(resultado).to eq(resultado2)
   end
   
-#end
+end
 
-#RSpec.describe ListaEtiquetas do
+RSpec.describe ListaEtiquetas do
   
   before(:each) do 
     @etiqueta1 = Etiqueta.new("Lentejas", 7, 7, 7, 7, 7, 7, [4,40])
@@ -543,5 +543,106 @@ RSpec.describe EtiquetaNutricional do
     expect(@paciente2.valoracion(@menu2)).to eq(true)
     expect(@paciente3.valoracion(@menu1)).to eq(false)
     expect(@paciente3.valoracion(@menu2)).to eq(true)
+  end
+end
+
+
+RSpec.describe ListaEtiquetas do
+  
+  before(:each) do 
+    @etiqueta1 = Etiqueta.new("Lentejas", 7, 7, 7, 7, 7, 7, [4,40])
+    @etiqueta2 = Etiqueta.new("Judias", 5, 5, 5, 5, 5, 2, [2,80])
+    @etiqueta3 = Etiqueta.new("Solomillo", 30, 30, 30, 30, 30, 0, [4,100])
+    @etiqueta4 = Etiqueta.new("Dorada", 40, 40, 40, 40, 40, 15, [2,120])
+    @etiqueta5 = Etiqueta.new("Ensalada", 8, 8, 8, 8, 8, 0, [4,140])
+    @etiqueta6 = Etiqueta.new("Pera", 60, 60, 60, 60, 60, 10, [2,160])
+    @etiqueta7 = Etiqueta.new("Yogurt", 3, 3, 3, 3, 3, 3, [4,40])
+    @etiqueta8 = Etiqueta.new("Chuletas", 8, 8, 8, 8, 8, 0, [2,240])
+    @etiqueta9 = Etiqueta.new("Pan", 60, 60, 60, 60, 60, 10, [1,100])
+    @etiqueta10 = Etiqueta.new("Tarta", 3, 3, 3, 3, 3, 3, [1,150])
+    
+    @menu1 = ListaEtiquetas.new()
+    @menu1.pushF(@etiqueta1)
+    @menu1.pushF(@etiqueta2)
+    @menu1.pushF(@etiqueta5)
+    @menu1.pushF(@etiqueta7)
+    
+    @menu2 = ListaEtiquetas.new()
+    @menu2.pushF(@etiqueta1)
+    @menu2.pushF(@etiqueta3)
+    @menu2.pushF(@etiqueta4)
+    @menu2.pushF(@etiqueta5)
+    @menu2.pushF(@etiqueta6)
+    
+    @menu3 = ListaEtiquetas.new()
+    @menu3.pushF(@etiqueta1)
+    @menu3.pushF(@etiqueta3)
+    @menu3.pushF(@etiqueta8)
+    @menu3.pushF(@etiqueta9)
+    
+    @menu4 = ListaEtiquetas.new()
+    @menu4.pushF(@etiqueta1)
+    @menu4.pushF(@etiqueta2)
+    @menu4.pushF(@etiqueta4)
+    @menu4.pushF(@etiqueta9)
+    @menu4.pushF(@etiqueta10)
+    
+    @menu5 = ListaEtiquetas.new()
+    @menu5.pushF(@etiqueta1)
+    @menu5.pushF(@etiqueta5)
+    @menu5.pushF(@etiqueta6)
+    @menu5.pushF(@etiqueta7)
+    
+    @menu6 = ListaEtiquetas.new()
+    @menu6.pushF(@etiqueta1)
+    @menu6.pushF(@etiqueta3)
+    @menu6.pushF(@etiqueta5)
+    @menu6.pushF(@etiqueta7)
+    @menu6.pushF(@etiqueta9)
+    
+    @menu7 = ListaEtiquetas.new()
+    @menu7.pushF(@etiqueta1)
+    @menu7.pushF(@etiqueta4)
+    @menu7.pushF(@etiqueta5)
+    @menu7.pushF(@etiqueta6)
+    
+    @menu8 = ListaEtiquetas.new()
+    @menu8.pushF(@etiqueta1)
+    @menu8.pushF(@etiqueta2)
+    @menu8.pushF(@etiqueta3)
+    @menu8.pushF(@etiqueta4)
+    @menu8.pushF(@etiqueta6)
+  
+    @menu9 = ListaEtiquetas.new()
+    @menu9.pushF(@etiqueta4)
+    @menu9.pushF(@etiqueta5)
+    @menu9.pushF(@etiqueta6)
+    @menu9.pushF(@etiqueta7)
+  
+    @menu10 = ListaEtiquetas.new()
+    @menu10.pushF(@etiqueta6)
+    @menu10.pushF(@etiqueta8)
+    @menu10.pushF(@etiqueta9)
+    @menu10.pushF(@etiqueta10)
+    @menu10.pushF(@etiqueta3)
+    
+    @menuDietetico = [@menu1, @menu2, @menu3, @menu4, @menu5, @menu6, @menu7, @menu8, @menu9, @menu10]
+    
+    @individuo1 = Individuo.new("Pepe", 20, 0)
+    @individuo2 = Individuo.new("Andres", 30, 0)
+    @individuo3 = Individuo.new("Andrea", 25, 0)
+    @individuo4 = Individuo.new("John", 25, 0)
+    @individuo5 = Individuo.new("Jesus", 27, 0)
+    @individuo6 = Individuo.new("Cris", 36, 0)
+    
+    @paciente1 = Paciente.new("Ana", 20, 1, 75, 1.6, [60, 58], [60, 59], "Actividad moderada")
+    @paciente2 = Paciente.new("Pedro", 22, 0, 80, 1.8, [81, 79], [61, 59], "Actividad intensa")
+    @paciente3 = Paciente.new("Juan", 30, 0, 110, 1.95, [71, 69], [60, 58], "reposo")
+    @paciente4 = Paciente.new("Cristina", 25, 1, 90, 1.72, [55, 56], [50, 50], "reposo")
+    @paciente5 = Paciente.new("Bea", 18, 1, 90, 1.72, [45, 45.5], [40, 41], "reposo")
+  end
+  
+  it "Se puede crear un array de menus" do
+    expect(@menuDietetico).to eq([@menu1, @menu2, @menu3, @menu4, @menu5, @menu6, @menu7, @menu8, @menu9, @menu10])
   end
 end
