@@ -101,7 +101,7 @@ RSpec.describe EtiquetaNutricional do
   
 end
 
-RSpec.describe ListaEtiquetas do
+RSpec.describe "ListaEtiquetas" do
   
   before(:each) do 
     @etiqueta1 = Etiqueta.new("nombre", 10, 10, 10, 10, 10, 10, [4,40])
@@ -209,7 +209,7 @@ RSpec.describe ListaEtiquetas do
 
 end
 
-RSpec.describe Individuo do
+RSpec.describe "Individuo" do
   
   it "Existe la clase individuo" do
     @individuo1 = Individuo.new("Pepe", 25, 0)
@@ -315,7 +315,7 @@ RSpec.describe Individuo do
   end
 end
 
-RSpec.describe Comparable do
+RSpec.describe "Comparable" do
   
   before(:each) do 
     @etiqueta1 = Etiqueta.new("nombre", 10, 10, 10, 10, 10, 10, [4,40])
@@ -497,7 +497,7 @@ RSpec.describe Comparable do
   
 end
 
-RSpec.describe ListaEtiquetas do
+RSpec.describe "ListaEtiquetas" do
   
   before(:each) do 
     @etiqueta1 = Etiqueta.new("Lentejas", 7, 7, 7, 7, 7, 7, [4,40])
@@ -547,7 +547,7 @@ RSpec.describe ListaEtiquetas do
 end
 
 
-RSpec.describe ListaEtiquetas do
+RSpec.describe "ListaEtiquetas" do
   
   require 'benchmark'
   include Benchmark 
