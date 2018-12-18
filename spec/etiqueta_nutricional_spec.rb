@@ -549,6 +549,9 @@ end
 
 RSpec.describe ListaEtiquetas do
   
+  require 'benchmark'
+  include Benchmark 
+  
   before(:each) do 
     @etiqueta1 = Etiqueta.new("Lentejas", 7, 7, 7, 7, 7, 7, [4,40])
     @etiqueta2 = Etiqueta.new("Judias", 5, 5, 5, 5, 5, 2, [2,80])
@@ -561,70 +564,25 @@ RSpec.describe ListaEtiquetas do
     @etiqueta9 = Etiqueta.new("Pan", 60, 60, 60, 60, 60, 10, [1,100])
     @etiqueta10 = Etiqueta.new("Tarta", 3, 3, 3, 3, 3, 3, [1,150])
     
-    @menu1 = ListaEtiquetas.new()
-    @menu1.pushF(@etiqueta1)
-    @menu1.pushF(@etiqueta2)
-    @menu1.pushF(@etiqueta5)
-    @menu1.pushF(@etiqueta7)
+    @menu1 = [@etiqueta1, @etiqueta2, @etiqueta5, @etiqueta7]
     
-    @menu2 = ListaEtiquetas.new()
-    @menu2.pushF(@etiqueta1)
-    @menu2.pushF(@etiqueta3)
-    @menu2.pushF(@etiqueta4)
-    @menu2.pushF(@etiqueta5)
-    @menu2.pushF(@etiqueta6)
+    @menu2 = [@etiqueta1, @etiqueta3, @etiqueta4, @etiqueta5, @etiqueta6]
     
-    @menu3 = ListaEtiquetas.new()
-    @menu3.pushF(@etiqueta1)
-    @menu3.pushF(@etiqueta3)
-    @menu3.pushF(@etiqueta8)
-    @menu3.pushF(@etiqueta9)
+    @menu3 = [@etiqueta1, @etiqueta3, @etiqueta8, @etiqueta9]
     
-    @menu4 = ListaEtiquetas.new()
-    @menu4.pushF(@etiqueta1)
-    @menu4.pushF(@etiqueta2)
-    @menu4.pushF(@etiqueta4)
-    @menu4.pushF(@etiqueta9)
-    @menu4.pushF(@etiqueta10)
+    @menu4 = [@etiqueta1, @etiqueta2, @etiqueta4, @etiqueta9, @etiqueta10]
     
-    @menu5 = ListaEtiquetas.new()
-    @menu5.pushF(@etiqueta1)
-    @menu5.pushF(@etiqueta5)
-    @menu5.pushF(@etiqueta6)
-    @menu5.pushF(@etiqueta7)
+    @menu5 = [@etiqueta1, @etiqueta5, @etiqueta6, @etiqueta7]
     
-    @menu6 = ListaEtiquetas.new()
-    @menu6.pushF(@etiqueta1)
-    @menu6.pushF(@etiqueta3)
-    @menu6.pushF(@etiqueta5)
-    @menu6.pushF(@etiqueta7)
-    @menu6.pushF(@etiqueta9)
+    @menu6 = [@etiqueta1, @etiqueta3, @etiqueta5, @etiqueta7, @etiqueta9]
     
-    @menu7 = ListaEtiquetas.new()
-    @menu7.pushF(@etiqueta1)
-    @menu7.pushF(@etiqueta4)
-    @menu7.pushF(@etiqueta5)
-    @menu7.pushF(@etiqueta6)
+    @menu7 = [@etiqueta1, @etiqueta4, @etiqueta5, @etiqueta6]
     
-    @menu8 = ListaEtiquetas.new()
-    @menu8.pushF(@etiqueta1)
-    @menu8.pushF(@etiqueta2)
-    @menu8.pushF(@etiqueta3)
-    @menu8.pushF(@etiqueta4)
-    @menu8.pushF(@etiqueta6)
+    @menu8 = [@etiqueta1, @etiqueta2, @etiqueta3, @etiqueta4, @etiqueta6]
   
-    @menu9 = ListaEtiquetas.new()
-    @menu9.pushF(@etiqueta4)
-    @menu9.pushF(@etiqueta5)
-    @menu9.pushF(@etiqueta6)
-    @menu9.pushF(@etiqueta7)
+    @menu9 = [@etiqueta4, @etiqueta5, @etiqueta6, @etiqueta7]
   
-    @menu10 = ListaEtiquetas.new()
-    @menu10.pushF(@etiqueta6)
-    @menu10.pushF(@etiqueta8)
-    @menu10.pushF(@etiqueta9)
-    @menu10.pushF(@etiqueta10)
-    @menu10.pushF(@etiqueta3)
+    @menu10 = [@etiqueta6, @etiqueta8, @etiqueta9, @etiqueta10, @etiqueta3]
     
     @menuDietetico = [@menu1, @menu2, @menu3, @menu4, @menu5, @menu6, @menu7, @menu8, @menu9, @menu10]
     
@@ -680,12 +638,33 @@ RSpec.describe ListaEtiquetas do
   end
   
   it "Se puede ordenar un array de menus con el metodo sort" do
-    @menuDietetico_ordenado = @menuDietetico.sort
+    @menuDietetico_ordenado = @menuDietetico.sort {|primero, segundo| primero.valor_energetico <=> segundo.valor_energetico}
     expect(@menuDietetico_ordenado).to eq([@menu1, @menu5, @menu3, @menu6, @menu9, @menu7, @menu4, @menu8, @menu2, @menu10])
   end
   
   it "Se puede ordenar una lista doblemente enlazada de individuos mediante el metodo sort" do
     @valoracion_ordenada = @valoracion1.sort
     expect(@valoracion_ordenada).to eq([@paciente1, @paciente6, @paciente8, @paciente4, @paciente9, @paciente5, @paciente10, @paciente3, @paciente2, @paciente7])
+  end
+  
+  it "Se puede ordenar un array de menus con el metodo each" do
+    @menuDietetico_ordenado = @menuDietetico.ordenar_each
+    expect(@menuDietetico_ordenado).to eq([@menu1, @menu5, @menu3, @menu6, @menu9, @menu7, @menu4, @menu8, @menu2, @menu10])
+  end
+  
+  it "Se puede ordenar una lista de individuos con el metodo each" do
+    @valoracion_ordenada = @valoracion1.ordenar_each
+    expect(@valoracion_ordenada).to eq([@paciente1, @paciente6, @paciente8, @paciente4, @paciente9, @paciente5, @paciente10, @paciente3, @paciente2, @paciente7])
+  end
+  
+  it "Pruebas con benchmark" do
+    
+    Benchmark.benchmark() do |x|
+      tt = x.report("Menu dietetico for") { @menuDietetico_ordenado = @menuDietetico.ordenar_for }
+      tf = x.report("Valoracion for") { @valoracion_ordenada = @valoracion1.ordenar_for }
+      tu = x.report("Menu dietetico sort") { @menuDietetico_ordenado = @menuDietetico.sort }
+      tv = x.report("Valoracion sort") { @valoracion_ordenada = @valoracion1.sort }
+      [tf+tt+tu+tv, (tf+tt+tu+tv)/4]
+    end
   end
 end
