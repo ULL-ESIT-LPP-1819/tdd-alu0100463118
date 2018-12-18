@@ -166,6 +166,32 @@ class ListaEtiquetas
     return @revisado
   end
   
+  def ordenar_each
+    @revisado = [];
+    self.each do |item|
+      posic = 0
+      if (@revisado.length == 0)
+        @revisado.push(item)
+      elsif (@revisado[@revisado.length - 1] < item)
+        @revisado.push(item)
+      else
+        
+        while ((item > @revisado[posic]) && (posic < @revisado.length))
+          posic = posic + 1
+        end
+        @revisado.push(item)
+        tamano = @revisado.length - 1
+        while (tamano >= posic)
+          @revisado[tamano] = @revisado[tamano - 1]
+          tamano = tamano - 1
+        end
+        @revisado[posic] = item
+        
+      end
+    end
+    return @revisado
+  end
+  
   def <=>(other)
     valor_energetico <=> other.valor_energetico
   end

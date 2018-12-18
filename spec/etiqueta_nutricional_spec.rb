@@ -660,11 +660,16 @@ RSpec.describe ListaEtiquetas do
   it "Pruebas con benchmark" do
     
     Benchmark.benchmark() do |x|
-      tt = x.report("Menu dietetico for") { @menuDietetico_ordenado = @menuDietetico.ordenar_for }
-      tf = x.report("Valoracion for") { @valoracion_ordenada = @valoracion1.ordenar_for }
-      tu = x.report("Menu dietetico sort") { @menuDietetico_ordenado = @menuDietetico.sort }
-      tv = x.report("Valoracion sort") { @valoracion_ordenada = @valoracion1.sort }
-      [tf+tt+tu+tv, (tf+tt+tu+tv)/4]
+      puts ""
+      puts "                          Resultados:"
+      puts ""
+      x.report("Menu dietetico for ") { @menuDietetico_ordenado = @menuDietetico.ordenar_for }
+      x.report("Valoracion for     ") { @valoracion_ordenada = @valoracion1.ordenar_for }
+      x.report("Menu dietetico sort") { @menuDietetico_ordenado = @menuDietetico.sort }
+      x.report("Valoracion sort    ") { @valoracion_ordenada = @valoracion1.sort }
+      x.report("Menu dietetico each") { @menuDietetico_ordenado = @menuDietetico.ordenar_each }
+      x.report("Valoracion each    ") { @valoracion_ordenada = @valoracion1.ordenar_each }
+      puts ""
     end
   end
 end
