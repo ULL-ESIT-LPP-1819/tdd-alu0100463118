@@ -1,3 +1,8 @@
+require "bundler/setup"
+require "etiqueta_nutricional"
+require 'coveralls'
+
+
 RSpec.describe EtiquetaNutricional do
   
   it "has a version number" do
@@ -638,7 +643,7 @@ RSpec.describe "ListaEtiquetas" do
   end
   
   it "Se puede ordenar un array de menus con el metodo sort" do
-    @menuDietetico_ordenado = @menuDietetico.sort {|primero, segundo| primero.valor_energetico <=> segundo.valor_energetico}
+    @menuDietetico_ordenado = @menuDietetico.sort                                                                                          {|primero, segundo| primero.valor_energetico <=> segundo.valor_energetico}
     expect(@menuDietetico_ordenado).to eq([@menu1, @menu5, @menu3, @menu6, @menu9, @menu7, @menu4, @menu8, @menu2, @menu10])
   end
   
