@@ -678,3 +678,91 @@ RSpec.describe "ListaEtiquetas" do
     end
   end
 end
+
+RSpec.describe Menu do
+  
+  before(:each) do 
+  
+    @menu = Menu.new("Lunes") do
+      titulo "Bajo en calorias"
+      ingesta :min => 30, :max => 35
+      
+      desayuno :descripcion => "Pan de trigo integral",
+        :porcion => "1 rodaja",
+        :gramos => 100,
+        :grasas => 3.3,
+        :carbohidratos => 54.0,
+        :proteinas => 11.0,
+        :fibra => 2.3,
+        :sal => 0.06
+        
+      desayuno :descripcion => "Actimel",
+        :porcion => "1 porcion",
+        :gramos => 100,
+        :grasas => 3.4,
+        :carbohidratos => 4.4,
+        :proteinas => 3.6,
+        :fibra => 2.3,
+        :sal => 0.05
+        
+      almuerzo :descripcion => "Arroz",
+        :porcion => "1 taza",
+        :gramos => 100,
+        :grasas => 0.9,
+        :carbohidratos => 81.6,
+        :proteinas => 6.67,
+        :fibra => 1.4,
+        :sal => 0.04
+        
+      almuerzo :descripcion => "Lentejas",
+        :porcion => "1/2 cucharon",
+        :grasas => 0.4,
+        :carbohidratos => 20.0,
+        :proteinas => 9.0,
+        :fibra => 8.0,
+        :sal => 0.02
+        
+      almuerzo :descripcion => "Naranja",
+        :porcion => "1 pieza",
+        :gramos => 100,
+        :grasas => 0.12,
+        :carbohidratos => 11.75,
+        :proteinas => 0.94,
+        :fibra => 2.4,
+        :sal => 0
+        
+      cena :descripcion => "Leche entera hacendado",
+        :porcion => "1 vaso",
+        :gramos => 100,
+        :grasas => 3.6,
+        :carbohidratos => 4.6,
+        :proteinas => 3.1,
+        :fibra => 2.8,
+        :sal => 0.13
+        
+        
+    end
+  end
+  
+  it "Creacion de DSL propio para la clase menu" do
+    output = Tabla.new
+    output << 'Lunes' 
+    output << '' << 'Grasas' << 'Carbohidratos' << 'Proteinas' << 'Fibra' << 'Sal' << 'Valor energético'
+    output << 'Desayuno'
+    output << 'Pan de trigo integral' << 3.3 << 54.0 << 11.0 << 2.3 << 0.06 << 310.76
+    output << 'Actimel' << 3.4 << 4.4 << 3.6 << 2.3 << 0.05 << 83.6
+    output << ''
+    output << 'Almuerzo'
+    output << 'Arroz' << 0.9 << 81.6 << 6.67 << 1.4 << 0.04 << 374.02
+    output << 'Lentejas' << 0.4 << 20.0 << 9.0 << 8.0 << 0.02 << 191.72
+    output << 'Naranja' << 0.12 << 11.75 << 0.94 << 2.4 << 0 << 73.44
+    output << ''
+    output << 'Cena'
+    output << 'Leche entera hacendado' << 3.6 << 4.6 << 3.1 << 2.8 << 0.13 << 89.18
+    output << ''
+    output << 'Valor energético total' << 300
+    expect(output.to_s).to eq(@menu.to_s)
+    puts "#{@menu.to_s}"
+  end
+  
+end

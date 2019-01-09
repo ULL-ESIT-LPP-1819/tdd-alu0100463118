@@ -4,6 +4,8 @@ require "etiqueta_nutricional/lista_etiquetas"
 require "etiqueta_nutricional/individuo"
 require "etiqueta_nutricional/paciente"
 require "etiqueta_nutricional/array"
+require "etiqueta_nutricional/menu"
+require "etiqueta_nutricional/tabla"
 
 module EtiquetaNutricional
   class Error < StandardError; end

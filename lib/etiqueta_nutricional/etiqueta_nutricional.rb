@@ -108,4 +108,7 @@ class Etiqueta
     @valor_energetico_kcal <=> other.obtener_valor_energetico_kcal
   end
   
+  def +(other)
+    @valor_energetico_kcal + other.obtener_valor_energetico_kcal
+  end
 end
