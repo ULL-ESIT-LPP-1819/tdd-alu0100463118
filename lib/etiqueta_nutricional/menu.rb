@@ -37,7 +37,8 @@ class Menu
   end
   
   def kcal
-    300#(@desayuno.reduce(:+) + @almuerzo.reduce(:+) + @cena.reduce(:+)).round(2)
+    #(@desayuno.reduce(:+) + @almuerzo.reduce(:+) + @cena.reduce(:+)).round(2)
+    @desayuno.reduce(0) { |sum, obj| sum + obj.obtener_valor_energetico_kcal } + @almuerzo.reduce(0) { |sum, obj| sum + obj.obtener_valor_energetico_kcal } + @cena.reduce(0) { |sum, obj| sum + obj.obtener_valor_energetico_kcal }
   end
   
   def to_s

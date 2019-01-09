@@ -744,6 +744,14 @@ RSpec.describe Menu do
     end
   end
   
+  it "Se puyede crear un menu" do
+    expect(@menu).not_to be(nil)
+  end
+  
+  it "Se puede calcular el valor energetico" do
+    expect(@menu.kcal).to eq(1122.72)
+  end
+  
   it "Creacion de DSL propio para la clase menu" do
     output = Tabla.new
     output << 'Lunes' 
@@ -760,9 +768,12 @@ RSpec.describe Menu do
     output << 'Cena'
     output << 'Leche entera hacendado' << 3.6 << 4.6 << 3.1 << 2.8 << 0.13 << 89.18
     output << ''
-    output << 'Valor energético total' << 300
+    output << 'Valor energético total' << 1122.72
+    
     expect(output.to_s).to eq(@menu.to_s)
-    puts "#{@menu.to_s}"
+    
+    puts "\n#{@menu.to_s}\n\n"
+  
   end
   
 end
